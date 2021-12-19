@@ -1,7 +1,5 @@
 require('dotenv').config();
-const fetch = require('node-fetch');
 const inquirer = require('inquirer');
-const prompt = require('prompt');
 const { clearConsole } = require('./utils');
 const axios = require('axios');
 
@@ -61,7 +59,6 @@ const mainLoop = async () => {
   }
 };
 
-mainLoop();
 
 const searchBook = async (query) => {
   // clearConsole();
@@ -120,43 +117,12 @@ const displayBookChoices = (results) => {
     const { title, authors, publisher } = book;
     return {
       name: `${title} | ${authors} | ${publisher}`,
-      
+      value: title,
+      short: title,
     };
   });
   return booksObjArr;
 };
 
-// prompt.start();
 
-// prompt.get(['title'], async (err, result) => {
-//   console.log('CLI input received: ');
-//   console.log('title:' + result.title);
-
-//   const response = await fetch(
-//     `https://www.googleapis.com/books/v1/volumes?q=${result.title}&key=${process.env.API_KEY}`
-//   );
-
-//   const books = await response.json();
-//   const items = books.items;
-
-//   for (let i = 0; i < 5; i++) {
-//     const book = {
-//       title: items[i].volumeInfo.title,
-//       author: items[i].volumeInfo.authors,
-//       publishers: items[i].volumeInfo.publisher,
-//     };
-//     console.log(book);
-//   }
-
-//   // console.log(items);
-// });
-
-// const welcomeMessage = () => {
-//   console.log('WHAT IS YOUR NAME?');
-//   prompt.get(['name'], (err, result) => {
-//     console.log('Greetings:' + result.name);
-//   });
-// };
-
-// welcomeMessage();
-// searchForTitles();
+mainLoop();

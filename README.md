@@ -24,6 +24,7 @@ Mocha?
 ### MVPs:
 
 1. Type in query and it should display a list of 5 books matching that query
+   1. 
 2. Each item in the list should include the book's author, title, and publishing company
 3. A user should be able to select a book from the 5 displayed to save to a "Reading List"
 4. Viewing a "Reading List" with all the books the user has selected from their queries--this is a local Reading List that is not attached to Google Book's account

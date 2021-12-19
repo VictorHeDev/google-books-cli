@@ -3,9 +3,7 @@ const fetch = require('node-fetch');
 const inquirer = require('inquirer');
 const prompt = require('prompt');
 const { clearConsole } = require('./utils');
-
-console.log('WELCOME TO THE GOOGLE-BOOKS-CLI!');
-console.log('Please follow the appropriate prompts below ...');
+const axios = require('axios');
 
 const greetByName = () => {
   inquirer
@@ -51,19 +49,30 @@ const mainLoop = async () => {
   console.log('Please follow the appropriate prompts below ...');
 
   try {
-    const mainMenuAnswer = await inquirer.prompt(mainMenu);
-    console.log('You chose: ' + mainMenuAnswer.action);
+    let userWantsToExit = false;
+    while (!userWantsToExit) {
+      const mainMenuAnswer = await inquirer.prompt(mainMenu);
+      console.log('You chose to: ' + mainMenuAnswer.action);
 
-    const { action, query } = mainMenuAnswer;
+      const { action, query } = mainMenuAnswer;
 
-    switch (action) {
-      case 'search':
-        console.log(query);
+      switch (action) {
+        case 'search':
+          // console.log(query);
+          searchBook(query);
+          break;
+        case 'list':
+          console.log('You want the list');
+          break;
 
-        break;
-
-      default:
-        break;
+        case 'exit':
+          console.log('Thanks for checking in. See you again soon!');
+          userWantsToExit = true;
+          break;
+        default:
+          console.log('Please choose a valid choice!');
+          break;
+      }
     }
   } catch (err) {
     throw new Error(err);
@@ -72,23 +81,21 @@ const mainLoop = async () => {
 
 mainLoop();
 
-const searchBook = () => {
-  inquirer
-    .prompt([
-      {
-        name: 'search_book',
-        type: 'input',
-        message: 'What title would you like to search for?',
+const searchBook = async (query) => {
+  if (query) {
+    const res = await axios.get('https://www.googleapis.com/books/v1/volumes', {
+      params: {
+        q: query,
+        startIndex: 0,
+        maxResults: 5,
       },
-      {
-        name: 'last_name',
-        type: 'input',
-        message: 'What is your last name?',
-      },
-    ])
-    .then((res) =>
-      console.log(`You would like to search for: ${res.search_book}!`)
+    });
+
+    const fiveBooksArr = res.data.items;
+    console.log(
+      fiveBooksArr.forEach((book) => console.log('\n' + book.volumeInfo.title))
     );
+  }
 };
 
 // prompt.start();

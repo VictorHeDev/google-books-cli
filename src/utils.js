@@ -1,10 +1,9 @@
-const readline = require('readline');
+const READLINE = require('readline');
 
 const clearConsole = () => {
-  const blankScreen = '\n'.repeat(process.stdout.rows);
-  console.log(blankScreen);
-  readline.cursorTo(process.stdout, 0, 0);
-  readline.clearScreenDown(process.stdout);
+  READLINE.cursorTo(process.stdout, 0, 0);
+  READLINE.clearLine(process.stdout, 0);
+  READLINE.clearScreenDown(process.stdout);
 };
 
 module.exports = {

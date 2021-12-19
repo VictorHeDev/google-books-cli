@@ -5,23 +5,6 @@ const prompt = require('prompt');
 const { clearConsole } = require('./utils');
 const axios = require('axios');
 
-const greetByName = () => {
-  inquirer
-    .prompt([
-      {
-        name: 'first_name',
-        type: 'input',
-        message: 'What is your first name?',
-      },
-      {
-        name: 'last_name',
-        type: 'input',
-        message: 'What is your last name?',
-      },
-    ])
-    .then((res) => console.log(`Hey, ${res.first_name} ${res.last_name}!`));
-};
-
 const mainMenu = [
   {
     type: 'list',
@@ -45,28 +28,27 @@ const mainMenu = [
 
 const mainLoop = async () => {
   clearConsole();
-  console.log('WELCOME TO THE GOOGLE-BOOKS-CLI!');
-  console.log('Please follow the appropriate prompts below ...');
+  // console.clear();
+  console.log('WELCOME TO THE GOOGLE-BOOKS-CLI!\n');
+  // console.log('Please follow the appropriate prompts below ...');
 
   try {
     let userWantsToExit = false;
     while (!userWantsToExit) {
       const mainMenuAnswer = await inquirer.prompt(mainMenu);
-      console.log('You chose to: ' + mainMenuAnswer.action);
+      // console.log('You chose to: ' + mainMenuAnswer.action);
 
       const { action, query } = mainMenuAnswer;
 
       switch (action) {
         case 'search':
-          // console.log(query);
-          searchBook(query);
+          await searchBook(query);
           break;
         case 'list':
           console.log('You want the list');
           break;
-
         case 'exit':
-          console.log('Thanks for checking in. See you again soon!');
+          console.log('Thanks for checking in. \nSee you again soon!');
           userWantsToExit = true;
           break;
         default:
@@ -82,20 +64,48 @@ const mainLoop = async () => {
 mainLoop();
 
 const searchBook = async (query) => {
+  clearConsole();
+  console.clear();
   if (query) {
-    const res = await axios.get('https://www.googleapis.com/books/v1/volumes', {
-      params: {
-        q: query,
-        startIndex: 0,
-        maxResults: 5,
-      },
+    const fiveBooksArr = await callGoogleBooksApi(query);
+    // console.log(fiveBooksArr.forEach((book) => console.log('\n' + book.title)));
+    const fiveBooksArrFormatted = fiveBooksArr.map((book) => {
+      return `Title: ${book.title} | Authors: ${book.authors} | Publisher: ${book.publisher}`;
     });
+    const addToList = await inquirer.prompt(
+      {
+        type: 'checkbox',
+        name: 'add',
+        message: `Do you want to add any of these to your reading list?`,
+        choices: fiveBooksArrFormatted,
+      }
 
-    const fiveBooksArr = res.data.items;
-    console.log(
-      fiveBooksArr.forEach((book) => console.log('\n' + book.volumeInfo.title))
+      // async () => chosenBooks(fiveBooksArr)
     );
+
+    console.log(addToList);
   }
+};
+
+const callGoogleBooksApi = async (query) => {
+  const res = await axios.get('https://www.googleapis.com/books/v1/volumes', {
+    params: {
+      q: query,
+      startIndex: 0,
+      maxResults: 5,
+    },
+  });
+
+  const fiveBooksArr = res.data.items.map((book) => book.volumeInfo);
+  return fiveBooksArr;
+  // console.log(fiveBooksArr.forEach((book) => console.log('\n' + book.title)));
+};
+
+const chosenBooks = (results) => {
+  const booksObjArr = results.map((book) => {
+    const { title, authors, publisher } = book;
+    return { title, authors, publisher };
+  });
 };
 
 // prompt.start();

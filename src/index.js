@@ -1,6 +1,7 @@
 const inquirer = require('inquirer');
 const { clearConsole } = require('./utils');
 const { searchBook } = require('./books');
+const { retrieveReadingList } = require('./reading_list');
 
 const mainMenu = [
   {
@@ -42,7 +43,8 @@ const mainLoop = async () => {
           await searchBook(query);
           break;
         case 'list':
-          console.log('You want the list');
+          // console.log('You want the list');
+          retrieveReadingList();
           break;
         case 'exit':
           console.log('Thanks for checking in. \nSee you again soon!');
@@ -59,3 +61,5 @@ const mainLoop = async () => {
 };
 
 mainLoop();
+
+module.exports = { mainLoop };

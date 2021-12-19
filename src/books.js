@@ -2,6 +2,7 @@ const axios = require('axios');
 const inquirer = require('inquirer');
 const { clearConsole } = require('./utils');
 require('dotenv').config();
+const { addBooksToReadingList } = require('./reading_list');
 
 const BASE_URL = 'https://www.googleapis.com/books/v1/volumes';
 
@@ -17,21 +18,24 @@ const searchBook = async (query) => {
       return `Title: ${book.title} | Authors: ${book.authors} | Publisher: ${book.publisher}`;
     });
 
-    const addToList = await inquirer.prompt(
-      {
-        type: 'checkbox',
-        name: 'add',
-        message: `Do you want to add any of these to your reading list?`,
-        async choices() {
-          return displayBookChoices(fiveBooksArr);
-        },
-        // choices: fiveBooksArrFormatted,
-      }
+    const addToList = await inquirer.prompt({
+      type: 'checkbox',
+      name: 'add',
+      message: `Do you want to add any of these to your reading list?`,
+      async choices() {
+        return displayBookChoices(fiveBooksArr);
+      },
+      // choices: fiveBooksArrFormatted,
+    });
 
-      // async () => chosenBooks(fiveBooksArr)
-    );
-
-    console.log(addToList);
+    // console.log(addToList);
+    if (addToList.add) {
+      addBooksToReadingList(fiveBooksArr, addToList.add);
+    } else {
+      console.log(`\nYou chose to not add any books this time.\n`);
+    }
+  } else {
+    console.log(`\nSearch query cannot be black.\nPlease enter a title`);
   }
 };
 
@@ -49,7 +53,7 @@ const callGoogleBooksApi = async (query) => {
     if (responseArr) {
       // return the book obj with title, authors, publisher
       const fiveBooksArr = responseArr.map((book) => book.volumeInfo);
-      console.log(fiveBooksArr);
+      // console.log(fiveBooksArr);
       return fiveBooksArr;
     }
     console.log(

@@ -38,7 +38,21 @@ const retrieveReadingList = () => {
   }
 };
 
+const resetReadingList = () => {
+  if (existsSync(fileSrc)) {
+    writeFileSync(fileSrc, '');
+    console.log('\nBeep boop, your reading list has been reset\n');
+  } else {
+    console.log(
+      `\nWe can't seem to find this file.\nPlease create a file named 'reading_list.json' in the root directory\n`
+    );
+  }
+};
+
 module.exports = {
   addBooksToReadingList,
   retrieveReadingList,
+  resetReadingList,
 };
+
+resetReadingList();

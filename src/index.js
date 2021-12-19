@@ -1,7 +1,7 @@
 const inquirer = require('inquirer');
 const { clearConsole } = require('./utils');
 const { searchBook } = require('./books');
-const { retrieveReadingList } = require('./reading_list');
+const { retrieveReadingList, resetReadingList } = require('./reading_list');
 
 const mainMenu = [
   {
@@ -11,6 +11,7 @@ const mainMenu = [
     choices: [
       { name: 'Search for a book by title', value: 'search' },
       { name: 'Check out my reading list', value: 'list' },
+      { name: 'Clear reading list', value: 'clear' },
       { name: 'Exit this program', value: 'exit' },
     ],
   },
@@ -20,6 +21,14 @@ const mainMenu = [
     message: 'What title would you like to search for?',
     when(answer) {
       return answer.action === 'search';
+    },
+  },
+  {
+    type: 'confirm',
+    name: 'confirmClear',
+    message: 'Are you sure you want to clear your reading list?',
+    when(answer) {
+      return answer.action === 'clear';
     },
   },
 ];
@@ -35,16 +44,19 @@ const mainLoop = async () => {
     while (!userWantsToExit) {
       const mainMenuAnswer = await inquirer.prompt(mainMenu);
       // console.log('You chose to: ' + mainMenuAnswer.action);
-
-      const { action, query } = mainMenuAnswer;
+      const { action, query, confirmClear } = mainMenuAnswer;
 
       switch (action) {
         case 'search':
           await searchBook(query);
           break;
         case 'list':
-          // console.log('You want the list');
           retrieveReadingList();
+          break;
+        case 'clear':
+          if (confirmClear) {
+            resetReadingList();
+          }
           break;
         case 'exit':
           console.log('Thanks for checking in. \nSee you again soon!');

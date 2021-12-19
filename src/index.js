@@ -64,20 +64,26 @@ const mainLoop = async () => {
 mainLoop();
 
 const searchBook = async (query) => {
-  clearConsole();
-  console.clear();
+  // clearConsole();
+  // console.clear();
   if (query) {
     const fiveBooksArr = await callGoogleBooksApi(query);
     // console.log(fiveBooksArr.forEach((book) => console.log('\n' + book.title)));
+
+    // maybe abstract this into a prettier format function later
     const fiveBooksArrFormatted = fiveBooksArr.map((book) => {
       return `Title: ${book.title} | Authors: ${book.authors} | Publisher: ${book.publisher}`;
     });
+
     const addToList = await inquirer.prompt(
       {
         type: 'checkbox',
         name: 'add',
         message: `Do you want to add any of these to your reading list?`,
-        choices: fiveBooksArrFormatted,
+        async choices() {
+          return displayBookChoices(fiveBooksArr);
+        },
+        // choices: fiveBooksArrFormatted,
       }
 
       // async () => chosenBooks(fiveBooksArr)
@@ -96,16 +102,28 @@ const callGoogleBooksApi = async (query) => {
     },
   });
 
-  const fiveBooksArr = res.data.items.map((book) => book.volumeInfo);
-  return fiveBooksArr;
+  const responseArr = res.data.items;
+  if (responseArr) {
+    // return the book obj with title, authors, publisher
+    const fiveBooksArr = responseArr.map((book) => book.volumeInfo);
+    return fiveBooksArr;
+  }
   // console.log(fiveBooksArr.forEach((book) => console.log('\n' + book.title)));
+  console.log(
+    `\nSorry, your search results did not have any matches. \nWould you like to try again?\n`
+  );
+  return [];
 };
 
-const chosenBooks = (results) => {
+const displayBookChoices = (results) => {
   const booksObjArr = results.map((book) => {
     const { title, authors, publisher } = book;
-    return { title, authors, publisher };
+    return {
+      name: `${title} | ${authors} | ${publisher}`,
+      
+    };
   });
+  return booksObjArr;
 };
 
 // prompt.start();

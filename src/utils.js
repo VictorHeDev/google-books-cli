@@ -14,11 +14,12 @@ const checkForValidTitle = (title) => {
 
   for (i = 0, len = title.length; i < len; i++) {
     code = title.charCodeAt(i);
+    // a lot of checks, but should still be faster than RegEx
     if (
       !(code > 47 && code < 58) && // numeric (0-9)
       !(code > 64 && code < 91) && // upper alpha (A-Z)
       !(code > 96 && code < 123) && // lower alpha (a-z)
-      !(code === 32)
+      !(code === 32) // code for spaceBar
     ) {
       return false;
     }
@@ -27,6 +28,14 @@ const checkForValidTitle = (title) => {
 };
 
 // FORMATTING
+const formatBookDisplay = (title, authors, publisher) => {
+  let formattedBook = ``;
+  let formattedTitle = titleColor(title);
+  let formattedAuthors = authorsColor(authors);
+  let formattedPublisher = publisherColor(publisher);
+  return (formattedBook =
+    formattedBook + formattedTitle + formattedAuthors + formattedPublisher);
+};
 
 /* COLORS
   standard: black, red, green, yellow, blue, magenta, cyan, white, gray
@@ -46,8 +55,6 @@ const authorsColor = chalk.magentaBright;
 const publisherColor = chalk.blueBright;
 const exitColor = chalk.gray;
 
-
-
 module.exports = {
   clearConsole,
   checkForValidTitle,
@@ -61,4 +68,5 @@ module.exports = {
   authorsColor,
   publisherColor,
   exitColor,
+  formatBookDisplay,
 };

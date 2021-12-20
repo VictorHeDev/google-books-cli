@@ -1,6 +1,16 @@
 const axios = require('axios');
 const inquirer = require('inquirer');
-const { clearConsole, checkForValidTitle } = require('./utils');
+const {
+  clearConsole,
+  checkForValidTitle,
+  menuColor,
+  warningColor,
+  errorColor,
+  titleColor,
+  authorsColor,
+  publisherColor,
+  formatBookDisplay,
+} = require('./utils');
 require('dotenv').config();
 const { addBooksToReadingList } = require('./reading_list');
 
@@ -10,32 +20,30 @@ const queryForBooks = async (query) => {
   // clearConsole();
   // console.clear();
   if (query && checkForValidTitle(query)) {
-    const fiveBooksArr = await callGoogleBooksApi(query);
+    const searchResultsArr = await callGoogleBooksApi(query);
 
-    // maybe abstract this into a prettier format function later
-    // const fiveBooksArrFormatted = fiveBooksArr.map((book) => {
-    //   return `Title: ${book.title} | Authors: ${book.authors} | Publisher: ${book.publisher}`;
-    // });
-
-    // TODO: can break this up to be more modular
     const addToList = await inquirer.prompt({
       type: 'checkbox',
       name: 'add',
-      message: `Do you want to add any of these to your reading list?`,
+      message: menuColor(
+        `Do you want to add any of these to your reading list?`
+      ),
       async choices() {
-        return displayBookChoices(fiveBooksArr);
+        return displayBookChoices(searchResultsArr);
       },
-      // choices: fiveBooksArrFormatted,
     });
 
-    // console.log(addToList);
     if (addToList.add) {
-      addBooksToReadingList(fiveBooksArr, addToList.add);
+      addBooksToReadingList(searchResultsArr, addToList.add);
     } else {
-      console.log(`\nYou chose to not add any books this time.\n`);
+      console.log(menuColor(`\nYou chose to not add any books this time.\n`));
     }
   } else {
-    console.log(`\nSearch query cannot be blank.\nPlease enter a title`);
+    console.log(
+      errorColor(
+        warningColor`\nPlease search with AlphaNumeric and spaces.\nIt looks like your search did not yield any results!\n`
+      )
+    );
   }
 };
 
@@ -52,17 +60,18 @@ const callGoogleBooksApi = async (query) => {
     const responseArr = res.data.items;
     if (responseArr) {
       // return the book obj with title, authors, publisher
-      const fiveBooksArr = responseArr.map((book) => book.volumeInfo);
-      // console.log(fiveBooksArr);
-      return fiveBooksArr;
+      const searchResultsArr = responseArr.map((book) => book.volumeInfo);
+      return searchResultsArr;
     }
     console.log(
-      `\nSorry, your search results did not have any matches. \nWould you like to try again?\n`
+      warningColor(
+        `\nSorry, your search results did not have any matches. \nWould you like to try again?\n`
+      )
     );
     return [];
-    // console.log(fiveBooksArr.forEach((book) => console.log('\n' + book.title)));
+    // console.log(searchResultsArr.forEach((book) => console.log('\n' + book.title)));
   } catch (err) {
-    console.log('An error has occurred: ', err);
+    console.log(errorColor('An error has occurred: '), err);
     return [];
   }
 };
@@ -72,7 +81,7 @@ const displayBookChoices = (results) => {
   const booksObjArr = results.map((book) => {
     const { title, authors, publisher } = book;
     return {
-      name: `${title} | ${authors} | ${publisher}`,
+      name: formatBookDisplay(title, authors, publisher),
       value: title,
       short: title,
     };

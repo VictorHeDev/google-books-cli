@@ -1,8 +1,8 @@
-# Welcome to google-books-cli
+# 📚 Welcome to google-books-cli 📚
 
 This is a command line application that will allow the user to query for 5 books using the Google Books API and save/remove them to a personal bookshelf.
 
-### Getting started
+### 🏁 Getting started 🏁
 
 These instructions assume that you have already downloaded Git and Node. These are some specific versions I am using:
 
@@ -10,7 +10,7 @@ These instructions assume that you have already downloaded Git and Node. These a
 - [npm 8.1.0](https://docs.npmjs.com/)
 - [node v17.0.1](https://nodejs.org/en/)
 
-### Initial Setup:
+### 💻 Initial Setup 💻
 
 1. To clone this repo, simply open up your terminal and type in: `git clone git@github.com:VictorHeDev/google-books-cli.git` (or copy and paste)
 2. Use your CLI and `cd` into the new directory that was downloaded. For example: `cd google-books-cli`
@@ -18,7 +18,7 @@ These instructions assume that you have already downloaded Git and Node. These a
 4. Run the application by typing `node .` when you are located in the root directory
    1. If you would like to use it anywhere, you can globally install it: `sudo npm install -g .` and then run `books`
 
-### Dependencies Used:
+### 💾 Dependencies Used 💾
 
 `Axios`: used to simplify HTTP requests and parse JSON
 `Boxen`: used to style Welcome message and Reading List message
@@ -29,7 +29,7 @@ These instructions assume that you have already downloaded Git and Node. These a
 `Inquirer`: (very difficult to spell) used to interact with the CLI and display multiple choice responses instead of having to type directly into the interface
 `Jest`: first time trying this JavaScript testing suite
 
-### MVPs:
+### ⛹🏻‍♂️ MVPs ⛹🏻‍♂️
 
 1. Type in query and it should display a list of 5 books matching that query
    1. First create the initial file structure and research which dependencies I might want to add:
@@ -45,9 +45,9 @@ These instructions assume that you have already downloaded Git and Node. These a
    1. Need to use Inquirer to pull up the list
    2. Need to parse through the list and display it in the CLI
 
-### Helpful Resources:
+### 💣 Helpful Resources 💣
 
-##### Documentation
+##### 📜 Documentation 📜
 
 - [Node Documentation](https://nodejs.org/dist/latest-v17.x/docs/api/)
 - [Axios](https://www.npmjs.com/package/axios)
@@ -67,7 +67,7 @@ These instructions assume that you have already downloaded Git and Node. These a
 - [How to use Chalk](https://motion-software.com/blog/color-the-nodejs-terminal-using-chalk-js-or-its-alternative)
 - [More Chalk](https://alligator.io/nodejs/styling-output-command-line-node-scripts-chalk/)
 
-### Notable issues or roadblocks
+### 🧱 Notable issues or roadblocks 🧱
 
 - Having to write JavaScript using ES5 syntax instead of usual ES6 (especially for import/export)
 - Choosing a CLI tool -- chose between prompt.js, inquirer.js, commander.js
@@ -78,7 +78,7 @@ These instructions assume that you have already downloaded Git and Node. These a
   - Ran into issues using esm and writing tests in jest. I like using the ES6 import/exports, but I also wanted to implement TDD in this project
 - Also had to downgrade the boxen version to use require and not import
 
-### TODO & Notes
+### 📝 TODO & Notes 📝
 
 - Use chalk.js to create thematic logs
   - [x] Red for errors

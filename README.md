@@ -71,3 +71,6 @@ Documentation
 
 - Use chalk.js to create thematic logs
   - Red for errors
+- Write validator for query
+  - Needs to check for alphanumeric and spaces
+  - Regex: /^[a-z0-9]+$/i

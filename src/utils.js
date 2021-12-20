@@ -8,7 +8,25 @@ const clearConsole = () => {
   READLINE.clearScreenDown(process.stdout);
 };
 
-// formatting string outputs
+// VALIDATORS
+const checkForValidTitle = (title) => {
+  let code, i, len;
+
+  for (i = 0, len = title.length; i < len; i++) {
+    code = title.charCodeAt(i);
+    if (
+      !(code > 47 && code < 58) && // numeric (0-9)
+      !(code > 64 && code < 91) && // upper alpha (A-Z)
+      !(code > 96 && code < 123) && // lower alpha (a-z)
+      !(code === 32)
+    ) {
+      return false;
+    }
+  }
+  return true;
+};
+
+// FORMATTING
 
 /* COLORS
   standard: black, red, green, yellow, blue, magenta, cyan, white, gray
@@ -28,13 +46,11 @@ const authorsColor = chalk.magentaBright;
 const publisherColor = chalk.blueBright;
 const exitColor = chalk.gray;
 
-// VALIDATORS
-const checkValidQuery = query => {
-  
-}
+
 
 module.exports = {
   clearConsole,
+  checkForValidTitle,
   welcomeColor,
   menuColor,
   successColor,

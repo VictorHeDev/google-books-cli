@@ -1,6 +1,6 @@
 const axios = require('axios');
 const inquirer = require('inquirer');
-const { clearConsole } = require('./utils');
+const { clearConsole, checkForValidTitle } = require('./utils');
 require('dotenv').config();
 const { addBooksToReadingList } = require('./reading_list');
 
@@ -9,7 +9,7 @@ const BASE_URL = 'https://www.googleapis.com/books/v1/volumes';
 const queryForBooks = async (query) => {
   // clearConsole();
   // console.clear();
-  if (query) {
+  if (query && checkForValidTitle(query)) {
     const fiveBooksArr = await callGoogleBooksApi(query);
 
     // maybe abstract this into a prettier format function later

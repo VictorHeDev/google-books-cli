@@ -18,6 +18,7 @@ const searchBook = async (query) => {
       return `Title: ${book.title} | Authors: ${book.authors} | Publisher: ${book.publisher}`;
     });
 
+    // TODO: can break this up to be more modular
     const addToList = await inquirer.prompt({
       type: 'checkbox',
       name: 'add',
@@ -68,6 +69,7 @@ const callGoogleBooksApi = async (query) => {
 };
 
 const displayBookChoices = (results) => {
+  // TODO: format return results better
   const booksObjArr = results.map((book) => {
     const { title, authors, publisher } = book;
     return {

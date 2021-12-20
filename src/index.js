@@ -72,6 +72,6 @@ const mainLoop = async () => {
   }
 };
 
-mainLoop();
+// mainLoop();
 
 module.exports = { mainLoop };

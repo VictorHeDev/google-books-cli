@@ -27,6 +27,7 @@ const addBooksToReadingList = (searchResults, chosenBooksTitles) => {
   writeFileSync(fileSrc, encodedData);
 };
 
+// !: say empty message if there are no books in reading list
 const retrieveReadingList = () => {
   const readingListJSON = retrieveReadingListJSON(fileSrc);
   if (readingListJSON.length) {
@@ -35,6 +36,10 @@ const retrieveReadingList = () => {
         `${idx + 1}. ${book.title} | ${book.authors} | ${book.publisher}`
       );
     });
+  } else {
+    console.log(
+      `\nIt seems like your reading list is empty.\nTry adding some new books!\n`
+    );
   }
 };
 
@@ -55,4 +60,4 @@ module.exports = {
   resetReadingList,
 };
 
-resetReadingList();
+// resetReadingList();

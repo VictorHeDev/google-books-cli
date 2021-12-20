@@ -36,7 +36,7 @@ const searchBook = async (query) => {
       console.log(`\nYou chose to not add any books this time.\n`);
     }
   } else {
-    console.log(`\nSearch query cannot be black.\nPlease enter a title`);
+    console.log(`\nSearch query cannot be blank.\nPlease enter a title`);
   }
 };
 

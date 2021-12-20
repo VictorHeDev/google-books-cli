@@ -49,7 +49,10 @@ Documentation
 - [Jest](https://jestjs.io/docs/getting-started)
 - [Google Books Api](https://developers.google.com/books/docs/v1/getting_started)
   Additional
-- [How to build a Weather CLI application using NodeJS](https://dev.to/aritik/build-a-weather-cli-tool-using-nodejs-inquirer-and-weatherapi-2f5n)
+- [Weather CLI](https://dev.to/aritik/build-a-weather-cli-tool-using-nodejs-inquirer-and-weatherapi-2f5n)
+- [Google Translate CLI](https://dev.to/rushankhan1/build-a-cli-with-node-js-4jbi)
+- [Todo List CLI](https://www.digitalocean.com/community/tutorials/how-to-build-command-line-applications-with-node-js)
+- [Joke & Quote CLI](https://www.section.io/engineering-education/create-a-nodejs-cli/)
 
 ### Notable issues or annoyances
 
@@ -59,3 +62,6 @@ Documentation
 - Edge cases and bugs such as parsing what is actually returned from the Google Books API
 -
 
+### TODO
+- Use chalk.js to create thematic logs
+  - Red for errors

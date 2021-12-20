@@ -20,6 +20,7 @@
     "chalk": "^5.0.0",
     "commander": "^8.3.0",
     "dotenv": "^10.0.0",
+    "figlet": "^1.5.2",
     "inquirer": "^8.2.0"
   },
   "devDependencies": {

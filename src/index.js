@@ -2,6 +2,8 @@ const inquirer = require('inquirer');
 const { clearConsole } = require('./utils');
 const { searchBook } = require('./books');
 const { retrieveReadingList, resetReadingList } = require('./reading_list');
+const figlet = require('figlet');
+// const chalk = require('chalk');
 
 const mainMenu = [
   {
@@ -35,8 +37,19 @@ const mainMenu = [
 
 const mainLoop = async () => {
   clearConsole();
+
+  console.log(
+    figlet.textSync(`Welcome to Wood's Library`, {
+      font: 'slant',
+      horizontalLayout: 'default',
+      verticalLayout: 'default',
+      width: 80,
+      whitespaceBreak: true,
+    })
+  );
+
   // console.clear();
-  console.log('WELCOME TO THE GOOGLE-BOOKS-CLI!\n');
+  // console.log('WELCOME TO THE GOOGLE-BOOKS-CLI!\n');
   // console.log('Please follow the appropriate prompts below ...');
 
   try {

@@ -28,12 +28,32 @@ const checkForValidTitle = (title) => {
 };
 
 // FORMATTING
+// ! not super DRY code, but I felt the need to separate these two formatting approaches
 const formatSearchResults = (title, authors, publisher) => {
   let formattedBook = ``;
   let formattedTitle = titleColor(title);
-  let formattedAuthors = authorsColor(authors);
-  let formattedPublisher = publisherColor(publisher);
-  return (formattedBook = `${formattedTitle}  ${formattedAuthors} ${formattedPublisher}`);
+  let formattedAuthors = authors.length
+    ? authorsColor(authors)
+    : authorsColor('N/A');
+  let formattedPublisher = publisher
+    ? publisherColor(publisher)
+    : publisherColor('N/A');
+  formattedBook = `${formattedTitle} by ${formattedAuthors} publisher ${formattedPublisher}`;
+  return formattedBook;
+};
+
+const formatReadingList = (idx, title, authors, publisher) => {
+  let formattedBook = ``;
+  let formattedIdx = menuColor(idx);
+  let formattedTitle = titleColor(title);
+  let formattedAuthors = authors.length
+    ? authorsColor(authors)
+    : authorsColor('N/A');
+  let formattedPublisher = publisher
+    ? publisherColor(publisher)
+    : publisherColor('N/A');
+  formattedBook = `${formattedTitle} by ${formattedAuthors} publisher ${formattedPublisher}`;
+  return `${formattedIdx}. ${formattedTitle} \n\tby ${formattedAuthors} \n\tpublished by ${formattedPublisher}`;
 };
 
 /* COLORS
@@ -42,15 +62,16 @@ const formatSearchResults = (title, authors, publisher) => {
   background colors are preceded with bg
   other modifiers: bold, dim, italic, underline, strikethrough
 */
-// should I break this up into a hash?
+// TODO: should I break this up into a hash?
+// TODO: should I make a different messages files?
 const welcomeColor = chalk.bold.yellowBright;
 const menuColor = chalk.bold.whiteBright;
 const successColor = chalk.bold.keyword('lime');
 const errorColor = chalk.bold.red;
 const warningColor = chalk.redBright;
 const readingListColor = chalk.whiteBright;
-const titleColor = chalk.bold.cyanBright;
-const authorsColor = chalk.magentaBright;
+const titleColor = chalk.bold.magentaBright;
+const authorsColor = chalk.cyanBright;
 const publisherColor = chalk.blueBright;
 const exitColor = chalk.gray;
 
@@ -68,4 +89,5 @@ module.exports = {
   publisherColor,
   exitColor,
   formatSearchResults,
+  formatReadingList,
 };

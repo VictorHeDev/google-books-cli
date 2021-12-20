@@ -80,7 +80,6 @@ const callGoogleBooksApi = async (query) => {
 
 // change name to displaySearchResults
 const displaySearchResults = (results) => {
-  // TODO: format return results better
   const booksObjArr = results.map((book) => {
     const { title, authors, publisher } = book;
     return {

@@ -4,6 +4,7 @@ const {
   welcomeColor,
   warningColor,
   errorColor,
+  exitColor,
 } = require('./utils');
 const { queryForBooks } = require('./books');
 const { retrieveReadingList, resetReadingList } = require('./reading_list');
@@ -92,7 +93,9 @@ const mainLoop = async () => {
           }
           break;
         case 'exit':
-          console.log('Thanks for checking in. \nSee you again soon!');
+          console.log(
+            exitColor('\nThanks for checking in. \nSee you again soon!')
+          );
           userWantsToExit = true;
           break;
         default:
@@ -101,7 +104,7 @@ const mainLoop = async () => {
       }
     }
   } catch (err) {
-    throw new Error(errorColor(err));
+    console.log(errorColor(`The error is: ${err}`));
   }
 };
 

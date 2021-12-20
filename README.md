@@ -76,10 +76,11 @@ Documentation
 - Write validator for query
   - [x] Needs to check for alphanumeric and spaces
   - [x] Regex: /^[a-z0-9]+$/i // used for loop instead for speed
+  - [ ] Check to see multiples of the same book are already in the reading list before adding
 - Book output
   - Figure out what to do and the colors needed
   - [x] set printType to "books" because we don't want box set collections
 - Reading List
-  - [ ] If reading list is blank when checked, let the user know to add in more books
-  - [ ] Title by Author(s) published by Publisher format
-    - [ ] If Author(s) or Publisher is undefined, return an N/A
+  - [x] If reading list is blank when checked, let the user know to add in more books
+  - [x] Title by Author(s) published by Publisher format
+    - [x] If Author(s) or Publisher is undefined, return an N/A

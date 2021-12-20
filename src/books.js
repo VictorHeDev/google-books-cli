@@ -6,17 +6,16 @@ const { addBooksToReadingList } = require('./reading_list');
 
 const BASE_URL = 'https://www.googleapis.com/books/v1/volumes';
 
-const searchBook = async (query) => {
+const queryForBooks = async (query) => {
   // clearConsole();
   // console.clear();
   if (query) {
     const fiveBooksArr = await callGoogleBooksApi(query);
-    // console.log(fiveBooksArr.forEach((book) => console.log('\n' + book.title)));
 
     // maybe abstract this into a prettier format function later
-    const fiveBooksArrFormatted = fiveBooksArr.map((book) => {
-      return `Title: ${book.title} | Authors: ${book.authors} | Publisher: ${book.publisher}`;
-    });
+    // const fiveBooksArrFormatted = fiveBooksArr.map((book) => {
+    //   return `Title: ${book.title} | Authors: ${book.authors} | Publisher: ${book.publisher}`;
+    // });
 
     // TODO: can break this up to be more modular
     const addToList = await inquirer.prompt({
@@ -82,7 +81,7 @@ const displayBookChoices = (results) => {
 };
 
 module.exports = {
-  searchBook,
+  queryForBooks,
   callGoogleBooksApi,
   displayBookChoices,
 };

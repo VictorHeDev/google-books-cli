@@ -17,7 +17,8 @@
   "license": "ISC",
   "dependencies": {
     "axios": "^0.24.0",
-    "chalk": "^4.1.2",
+    "boxen": "^5.1.2",
+    "chalk": "^3.0.0",
     "commander": "^8.3.0",
     "dotenv": "^10.0.0",
     "esm": "^3.2.25",

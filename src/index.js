@@ -1,22 +1,30 @@
 const inquirer = require('inquirer');
-const { clearConsole } = require('./utils');
-const { searchBook } = require('./books');
+const {
+  clearConsole,
+  welcomeColor,
+  warningColor,
+  errorColor,
+} = require('./utils');
+const { queryForBooks } = require('./books');
 const { retrieveReadingList, resetReadingList } = require('./reading_list');
 const figlet = require('figlet');
 const chalk = require('chalk');
+const boxen = require('boxen');
 
 // import inquirer from 'inquirer';
-// import { clearConsole } from './utils';
-// import { searchBook } from './books';
+// import { clearConsole, welcomeColor } from './utils';
+// import { queryForBooks } from './books';
 // import { retrieveReadingList, resetReadingList } from './reading_list';
 // import figlet from 'figlet';
 // import chalk from 'chalk';
+// import boxen from 'boxen';
 
+// main menu options highlight gets overridden by chalk. Left defaults.
 const mainMenu = [
   {
     type: 'list',
     name: 'action',
-    message: 'Hello there, what would you like to do today?',
+    message: welcomeColor(`Hello there, what would you like to do today?\n`),
     choices: [
       { name: 'Search for a book by title', value: 'search' },
       { name: 'Check out my reading list', value: 'list' },
@@ -27,7 +35,7 @@ const mainMenu = [
   {
     type: 'input',
     name: 'query',
-    message: 'What title would you like to search for?',
+    message: welcomeColor('What title would you like to search for?'),
     when(answer) {
       return answer.action === 'search';
     },
@@ -35,7 +43,7 @@ const mainMenu = [
   {
     type: 'confirm',
     name: 'confirmClear',
-    message: 'Are you sure you want to clear your reading list?',
+    message: warningColor('Are you sure you want to clear your reading list?'),
     when(answer) {
       return answer.action === 'clear';
     },
@@ -44,15 +52,21 @@ const mainMenu = [
 
 const mainLoop = async () => {
   clearConsole();
-  console.log(chalk.blue('Hello world!'));
+  // console.clear();
+
   console.log(
-    figlet.textSync(`Welcome to Wood's Library`, {
-      font: 'small slant',
-      horizontalLayout: 'default',
-      verticalLayout: 'default',
-      width: 80,
-      whitespaceBreak: true,
-    })
+    boxen(
+      welcomeColor(
+        figlet.textSync(`Welcome to Wood's Library`, {
+          font: 'small slant',
+          horizontalLayout: 'default',
+          verticalLayout: 'default',
+          width: 80,
+          whitespaceBreak: true,
+        })
+      ),
+      { padding: 1, margin: 1, borderStyle: 'double', borderColor: 'white' }
+    )
   );
 
   // console.clear();
@@ -63,12 +77,11 @@ const mainLoop = async () => {
     let userWantsToExit = false;
     while (!userWantsToExit) {
       const mainMenuAnswer = await inquirer.prompt(mainMenu);
-      // console.log('You chose to: ' + mainMenuAnswer.action);
       const { action, query, confirmClear } = mainMenuAnswer;
 
       switch (action) {
         case 'search':
-          await searchBook(query);
+          await queryForBooks(query);
           break;
         case 'list':
           retrieveReadingList();
@@ -83,15 +96,13 @@ const mainLoop = async () => {
           userWantsToExit = true;
           break;
         default:
-          console.log('Please choose a valid choice!');
+          console.log(warningColor('Please choose a valid choice!'));
           break;
       }
     }
   } catch (err) {
-    throw new Error(err);
+    throw new Error(errorColor(err));
   }
 };
-
-// mainLoop();
 
 module.exports = { mainLoop };

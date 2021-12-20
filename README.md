@@ -18,10 +18,14 @@ These instructions assume that you have already downloaded Git and Node. These a
 
 ### Dependencies Used:
 
-Axios: used to simplify HTTP requests and parse JSON
-Chalk: used to make the CLI colorful, pretty, and more pleasant to use
-Inquirer: (very difficult to spell) used to interact with the CLI and display multiple choice responses instead of having to type directly into the interface
-Jest: first time trying this JavaScript testing suite
+`Axios`: used to simplify HTTP requests and parse JSON
+`Boxen`: used to style Welcome message and Reading List message
+`Chalk`: used to make the CLI colorful, pretty, and more pleasant to use
+`Dotenv`: used to hide API key (which later I found out I didn't need to make GET requests)
+`esm`: used to write ES6 code
+`Figlet`: used with Boxen to create pretty ASCI art text
+`Inquirer`: (very difficult to spell) used to interact with the CLI and display multiple choice responses instead of having to type directly into the interface
+`Jest`: first time trying this JavaScript testing suite
 
 ### MVPs:
 
@@ -29,7 +33,7 @@ Jest: first time trying this JavaScript testing suite
    1. First create the initial file structure and research which dependencies I might want to add:
    2. Make an API key in order to use the Google Books API and hide it away into a .env file that will not be pushed to GitHub
    3. Create a welcome message
-   4. I can use the axios library in order to abstract away having to parse the JSON data that is being sent back
+   4. I can use the Axios library in order to abstract away having to parse the JSON data that is being sent back
    5. I specifically need to save the information about the book's title, author(s), and publisher
 2. A user should be able to select a book from the 5 displayed to save to a "Reading List"
    1. What ways can I save this?
@@ -41,14 +45,14 @@ Jest: first time trying this JavaScript testing suite
 
 ### Helpful Resources
 
-Documentation
+##### Documentation
 
 - [Node Documentation](https://nodejs.org/dist/latest-v17.x/docs/api/)
 - [Axios](https://www.npmjs.com/package/axios)
 - [Inquirer](https://www.npmjs.com/package/inquirer)
 - [Jest](https://jestjs.io/docs/getting-started)
 - [Google Books Api](https://developers.google.com/books/docs/v1/getting_started)
-  Additional
+##### Additional
 - [Weather CLI](https://dev.to/aritik/build-a-weather-cli-tool-using-nodejs-inquirer-and-weatherapi-2f5n)
 - [Google Translate CLI](https://dev.to/rushankhan1/build-a-cli-with-node-js-4jbi)
 - [Todo List CLI](https://www.digitalocean.com/community/tutorials/how-to-build-command-line-applications-with-node-js)
@@ -63,12 +67,14 @@ Documentation
 
 - Having to write JavaScript using ES5 syntax instead of usual ES6 (especially for import/export)
 - Choosing a CLI tool -- chose between prompt.js, inquirer.js, commander.js
+  - Choosing between a flag interface or a prettier CLI with space and arrow keys
   - Ultimately chose inquirer because I thought it would be the most fun to learn and has the best UI. I like how you can have many different options of inputs to choose from. Namely, I knew that I wanted a main menu interface, a way to select one or multiple books, and even though it wasn't totally necessary I wanted an option to reset the reading list.
 - Edge cases and bugs such as parsing what is actually returned from the Google Books API
 - Had to downgrade the chalk.js dependency version so I can use the require syntax in the top of the file (see their GitHub repo for more info)
   - Ran into issues using esm and writing tests in jest. I like using the ES6 import/exports, but I also wanted to implement TDD in this project
+- Also had to downgrade the boxen version to use require and not import
 
-### TODO
+### TODO & Notes
 
 - Use chalk.js to create thematic logs
   - [x] Red for errors

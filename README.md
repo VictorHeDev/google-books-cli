@@ -6,9 +6,11 @@ This is a command line application that will allow the user to query for 5 books
 
 These instructions assume that you have already downloaded Git and Node. These are some specific versions I am using:
 
-[git](https://git-scm.com/downloads)
-[npm 8.1.0](https://docs.npmjs.com/)
-[node v17.0.1](https://nodejs.org/en/)
+- [git](https://git-scm.com/downloads)
+- [npm 8.1.0](https://docs.npmjs.com/)
+- [node v17.0.1](https://nodejs.org/en/)
+
+### Initial Setup:
 
 1. To clone this repo, simply open up your terminal and type in: `git clone git@github.com:VictorHeDev/google-books-cli.git` (or copy and paste)
 2. Use your CLI and `cd` into the new directory that was downloaded. For example: `cd google-books-cli`
@@ -43,7 +45,7 @@ These instructions assume that you have already downloaded Git and Node. These a
    1. Need to use Inquirer to pull up the list
    2. Need to parse through the list and display it in the CLI
 
-### Helpful Resources
+### Helpful Resources:
 
 ##### Documentation
 
@@ -52,7 +54,9 @@ These instructions assume that you have already downloaded Git and Node. These a
 - [Inquirer](https://www.npmjs.com/package/inquirer)
 - [Jest](https://jestjs.io/docs/getting-started)
 - [Google Books Api](https://developers.google.com/books/docs/v1/getting_started)
+
 ##### Additional
+
 - [Weather CLI](https://dev.to/aritik/build-a-weather-cli-tool-using-nodejs-inquirer-and-weatherapi-2f5n)
 - [Google Translate CLI](https://dev.to/rushankhan1/build-a-cli-with-node-js-4jbi)
 - [Todo List CLI](https://www.digitalocean.com/community/tutorials/how-to-build-command-line-applications-with-node-js)

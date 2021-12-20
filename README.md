@@ -53,6 +53,7 @@ Documentation
 - [Google Translate CLI](https://dev.to/rushankhan1/build-a-cli-with-node-js-4jbi)
 - [Todo List CLI](https://www.digitalocean.com/community/tutorials/how-to-build-command-line-applications-with-node-js)
 - [Joke & Quote CLI](https://www.section.io/engineering-education/create-a-nodejs-cli/)
+- [Figlet fonts](https://delightlylinux.wordpress.com/2014/05/30/produce-fancy-text-with-figlet/#:~:text=Custom%20Fonts,downloaded%20from%20the%20ftp%20site.)
 
 ### Notable issues or annoyances
 

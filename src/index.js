@@ -3,7 +3,8 @@ const { clearConsole } = require('./utils');
 const { searchBook } = require('./books');
 const { retrieveReadingList, resetReadingList } = require('./reading_list');
 const figlet = require('figlet');
-// const chalk = require('chalk');
+const chalk = require('chalk');
+
 
 const mainMenu = [
   {
@@ -37,10 +38,10 @@ const mainMenu = [
 
 const mainLoop = async () => {
   clearConsole();
-
+  console.log(chalk.blue('Hello world!'));
   console.log(
     figlet.textSync(`Welcome to Wood's Library`, {
-      font: 'slant',
+      font: 'small slant',
       horizontalLayout: 'default',
       verticalLayout: 'default',
       width: 80,

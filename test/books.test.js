@@ -1,11 +1,11 @@
 // import axios from 'axios';
-// import { queryForBooks, callGoogleBooksApi, displayBookChoices } from './books';
+// import { queryForBooks, callGoogleBooksApi, displaySearchResults } from './books';
 
 const axios = require('axios');
 const {
   queryForBooks,
   callGoogleBooksApi,
-  displayBookChoices,
+  displaySearchResults,
 } = require('../src/books');
 
 jest.mock('axios');
@@ -17,8 +17,8 @@ describe('Initial test to see if functions exported correctly', () => {
   test('callGoogleBooksApi function exists', () => {
     expect(typeof callGoogleBooksApi).toEqual('function');
   });
-  test('displayBookChoices function exists', () => {
-    expect(typeof displayBookChoices).toEqual('function');
+  test('displaySearchResults function exists', () => {
+    expect(typeof displaySearchResults).toEqual('function');
   });
 });
 

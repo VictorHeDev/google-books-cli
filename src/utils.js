@@ -28,13 +28,12 @@ const checkForValidTitle = (title) => {
 };
 
 // FORMATTING
-const formatBookDisplay = (title, authors, publisher) => {
+const formatSearchResults = (title, authors, publisher) => {
   let formattedBook = ``;
   let formattedTitle = titleColor(title);
   let formattedAuthors = authorsColor(authors);
   let formattedPublisher = publisherColor(publisher);
-  return (formattedBook =
-    formattedBook + formattedTitle + formattedAuthors + formattedPublisher);
+  return (formattedBook = `${formattedTitle}  ${formattedAuthors} ${formattedPublisher}`);
 };
 
 /* COLORS
@@ -68,5 +67,5 @@ module.exports = {
   authorsColor,
   publisherColor,
   exitColor,
-  formatBookDisplay,
+  formatSearchResults,
 };

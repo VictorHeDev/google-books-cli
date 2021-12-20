@@ -3,6 +3,10 @@
   "version": "1.0.0",
   "description": "google-books-cli is a cli application that leverages the Google Books API. Users will be able to query for 5 books at a time and save or remove items to their personal bookshelves.",
   "main": "bin/google_books_cli.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/VictorHeDev/google-books-cli"
+  },
   "scripts": {
     "test": "node --experimental-vm-modules node_modules/jest/bin/jest.js"
   },

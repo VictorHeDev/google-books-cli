@@ -59,18 +59,27 @@ Documentation
 - [How to use Chalk](https://motion-software.com/blog/color-the-nodejs-terminal-using-chalk-js-or-its-alternative)
 - [More Chalk](https://alligator.io/nodejs/styling-output-command-line-node-scripts-chalk/)
 
-### Notable issues or annoyances
+### Notable issues or roadblocks
 
 - Having to write JavaScript using ES5 syntax instead of usual ES6 (especially for import/export)
 - Choosing a CLI tool -- chose between prompt.js, inquirer.js, commander.js
   - Ultimately chose inquirer because I thought it would be the most fun to learn and has the best UI. I like how you can have many different options of inputs to choose from. Namely, I knew that I wanted a main menu interface, a way to select one or multiple books, and even though it wasn't totally necessary I wanted an option to reset the reading list.
 - Edge cases and bugs such as parsing what is actually returned from the Google Books API
 - Had to downgrade the chalk.js dependency version so I can use the require syntax in the top of the file (see their GitHub repo for more info)
+  - Ran into issues using esm and writing tests in jest. I like using the ES6 import/exports, but I also wanted to implement TDD in this project
 
 ### TODO
 
 - Use chalk.js to create thematic logs
-  - Red for errors
+  - [x] Red for errors
+  - [x] Green for success messages
 - Write validator for query
-  - Needs to check for alphanumeric and spaces
-  - Regex: /^[a-z0-9]+$/i
+  - [x] Needs to check for alphanumeric and spaces
+  - [x] Regex: /^[a-z0-9]+$/i // used for loop instead for speed
+- Book output
+  - Figure out what to do and the colors needed
+  - [x] set printType to "books" because we don't want box set collections
+- Reading List
+  - [ ] If reading list is blank when checked, let the user know to add in more books
+  - [ ] Title by Author(s) published by Publisher format
+    - [ ] If Author(s) or Publisher is undefined, return an N/A

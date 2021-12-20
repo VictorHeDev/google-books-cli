@@ -9,7 +9,7 @@ const {
   titleColor,
   authorsColor,
   publisherColor,
-  formatBookDisplay,
+  formatSearchResults,
 } = require('./utils');
 require('dotenv').config();
 const { addBooksToReadingList } = require('./reading_list');
@@ -29,7 +29,7 @@ const queryForBooks = async (query) => {
         `Do you want to add any of these to your reading list?`
       ),
       async choices() {
-        return displayBookChoices(searchResultsArr);
+        return displaySearchResults(searchResultsArr);
       },
     });
 
@@ -54,6 +54,8 @@ const callGoogleBooksApi = async (query) => {
         q: query,
         startIndex: 0,
         maxResults: 5,
+        printType: 'books',
+        orderBy: 'relevance',
       },
     });
 
@@ -76,12 +78,13 @@ const callGoogleBooksApi = async (query) => {
   }
 };
 
-const displayBookChoices = (results) => {
+// change name to displaySearchResults
+const displaySearchResults = (results) => {
   // TODO: format return results better
   const booksObjArr = results.map((book) => {
     const { title, authors, publisher } = book;
     return {
-      name: formatBookDisplay(title, authors, publisher),
+      name: formatSearchResults(title, authors, publisher),
       value: title,
       short: title,
     };
@@ -92,5 +95,5 @@ const displayBookChoices = (results) => {
 module.exports = {
   queryForBooks,
   callGoogleBooksApi,
-  displayBookChoices,
+  displaySearchResults,
 };

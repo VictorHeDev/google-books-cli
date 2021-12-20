@@ -221,5 +221,267 @@
     "previewLink": "http://books.google.com/books?id=kLAoswEACAAJ&dq=harry+potter&hl=&cd=2&source=gbs_api",
     "infoLink": "http://books.google.com/books?id=kLAoswEACAAJ&dq=harry+potter&hl=&source=gbs_api",
     "canonicalVolumeLink": "https://books.google.com/books/about/Harry_Potter_and_the_Cursed_Child.html?hl=&id=kLAoswEACAAJ"
+  },
+  {
+    "title": "Poop",
+    "authors": [
+      "Poppy Champignon"
+    ],
+    "publisher": "Abrams",
+    "publishedDate": "2020-06-23",
+    "description": "A funny picture book about the ever-popular word poop Admit it: You love saying the word poop. It’s so much fun to say, much to your polite friend’s dismay. Poop. Poop. Poop. It’s all fun and games until you lose your triple-chocolate ice cream scoop and discover the true meaning of the word, and suddenly, it’s not so funny anymore. Or is it?",
+    "industryIdentifiers": [
+      {
+        "type": "ISBN_13",
+        "identifier": "9781647002619"
+      },
+      {
+        "type": "ISBN_10",
+        "identifier": "1647002613"
+      }
+    ],
+    "readingModes": {
+      "text": true,
+      "image": true
+    },
+    "pageCount": 32,
+    "printType": "BOOK",
+    "categories": [
+      "Juvenile Fiction"
+    ],
+    "maturityRating": "NOT_MATURE",
+    "allowAnonLogging": false,
+    "contentVersion": "1.3.2.0.preview.3",
+    "panelizationSummary": {
+      "containsEpubBubbles": false,
+      "containsImageBubbles": false
+    },
+    "imageLinks": {
+      "smallThumbnail": "http://books.google.com/books/content?id=cWfsDwAAQBAJ&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
+      "thumbnail": "http://books.google.com/books/content?id=cWfsDwAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
+    },
+    "language": "en",
+    "previewLink": "http://books.google.com/books?id=cWfsDwAAQBAJ&printsec=frontcover&dq=poop&hl=&cd=2&source=gbs_api",
+    "infoLink": "https://play.google.com/store/books/details?id=cWfsDwAAQBAJ&source=gbs_api",
+    "canonicalVolumeLink": "https://play.google.com/store/books/details?id=cWfsDwAAQBAJ"
+  },
+  {
+    "title": "Who Gives a Poop?",
+    "subtitle": "Surprising Science from One End to the Other",
+    "authors": [
+      "Heather L. Montgomery"
+    ],
+    "publisher": "Bloomsbury Publishing USA",
+    "publishedDate": "2020-10-13",
+    "description": "This uniquely crafted narrative nonfiction invites readers to follow the author into science labs, forests, hospitals, and landfills, as the author asks: Who uses poo? Poop is disgusting, but it's also packed with potential. One scientist spent months training a dog to track dung to better understand elephant birthing patterns. Another discovered that mastodon poop years ago is the reason we enjoy pumpkin pie today. And every week, some folks deliver their own poop to medical facilities, where it is swirled, separated, and shipped off to a hospital to be transplanted into another human. There's even a train full of human poop sludge that's stuck without a home in Alabama. This irreverent and engaging book shows that poop isn't just waste-and that dealing with it responsibly is our duty.",
+    "industryIdentifiers": [
+      {
+        "type": "ISBN_13",
+        "identifier": "9781547603480"
+      },
+      {
+        "type": "ISBN_10",
+        "identifier": "1547603488"
+      }
+    ],
+    "readingModes": {
+      "text": true,
+      "image": true
+    },
+    "pageCount": 176,
+    "printType": "BOOK",
+    "categories": [
+      "Juvenile Nonfiction"
+    ],
+    "maturityRating": "NOT_MATURE",
+    "allowAnonLogging": false,
+    "contentVersion": "1.1.1.0.preview.3",
+    "panelizationSummary": {
+      "containsEpubBubbles": false,
+      "containsImageBubbles": false
+    },
+    "imageLinks": {
+      "smallThumbnail": "http://books.google.com/books/content?id=rYTkDwAAQBAJ&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
+      "thumbnail": "http://books.google.com/books/content?id=rYTkDwAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
+    },
+    "language": "en",
+    "previewLink": "http://books.google.com/books?id=rYTkDwAAQBAJ&printsec=frontcover&dq=poop&hl=&cd=3&source=gbs_api",
+    "infoLink": "https://play.google.com/store/books/details?id=rYTkDwAAQBAJ&source=gbs_api",
+    "canonicalVolumeLink": "https://play.google.com/store/books/details?id=rYTkDwAAQBAJ"
+  },
+  {
+    "title": "Harry Potter Coloring Book",
+    "authors": [
+      "Inc. Scholastic"
+    ],
+    "publisher": "Scholastic Incorporated",
+    "publishedDate": "2015-11-10",
+    "description": "Packed with stunning pieces of artwork from the Warner Bros. archive, this deluxe coloring book gives fans the chance to color in the vivid settings and beloved characters of J.K. Rowling's wizarding world. Containing intricate line drawings used in the making of the Harry Potter films, this coloring book includes fan-favorite scenes, creatures, and characters: from Dobby and baby Norbert to Quidditch games and the unforgettable final battle between Harry and Lord Voldemort. Unique and interactive, Harry Potter: The Official Coloring Book is a perfect collector's item for all fans of the blockbuster saga--whether it's for those who grew up with Harry, Ron, and Hermione, or those who are discovering the magic for the very first time.",
+    "industryIdentifiers": [
+      {
+        "type": "ISBN_10",
+        "identifier": "1338029991"
+      },
+      {
+        "type": "ISBN_13",
+        "identifier": "9781338029994"
+      }
+    ],
+    "readingModes": {
+      "text": false,
+      "image": false
+    },
+    "pageCount": 96,
+    "printType": "BOOK",
+    "categories": [
+      "Juvenile Fiction"
+    ],
+    "averageRating": 3.5,
+    "ratingsCount": 3,
+    "maturityRating": "NOT_MATURE",
+    "allowAnonLogging": false,
+    "contentVersion": "preview-1.0.0",
+    "imageLinks": {
+      "smallThumbnail": "http://books.google.com/books/content?id=lMM4jgEACAAJ&printsec=frontcover&img=1&zoom=5&source=gbs_api",
+      "thumbnail": "http://books.google.com/books/content?id=lMM4jgEACAAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api"
+    },
+    "language": "en",
+    "previewLink": "http://books.google.com/books?id=lMM4jgEACAAJ&dq=harry+potter&hl=&as_pt=BOOKS&cd=1&source=gbs_api",
+    "infoLink": "http://books.google.com/books?id=lMM4jgEACAAJ&dq=harry+potter&hl=&as_pt=BOOKS&source=gbs_api",
+    "canonicalVolumeLink": "https://books.google.com/books/about/Harry_Potter_Coloring_Book.html?hl=&id=lMM4jgEACAAJ"
+  },
+  {
+    "title": "Fantastic Beasts and Where to Find Them: Cinematic Guide: Newt Scamander Do Not Feed Out",
+    "authors": [
+      "Felicity Baker"
+    ],
+    "publishedDate": "2017-02-02",
+    "description": "The essential film companion for Newt Scamander! Relive the magic of Newt's world with this hardback guidebook featuring your favourite scenes and quotes from Fantastic Beasts and Where to Find Them.",
+    "industryIdentifiers": [
+      {
+        "type": "ISBN_10",
+        "identifier": "1407179403"
+      },
+      {
+        "type": "ISBN_13",
+        "identifier": "9781407179407"
+      }
+    ],
+    "readingModes": {
+      "text": false,
+      "image": false
+    },
+    "pageCount": 64,
+    "printType": "BOOK",
+    "averageRating": 5,
+    "ratingsCount": 1,
+    "maturityRating": "NOT_MATURE",
+    "allowAnonLogging": false,
+    "contentVersion": "preview-1.0.0",
+    "panelizationSummary": {
+      "containsEpubBubbles": false,
+      "containsImageBubbles": false
+    },
+    "imageLinks": {
+      "smallThumbnail": "http://books.google.com/books/content?id=eq9XvgAACAAJ&printsec=frontcover&img=1&zoom=5&source=gbs_api",
+      "thumbnail": "http://books.google.com/books/content?id=eq9XvgAACAAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api"
+    },
+    "language": "en",
+    "previewLink": "http://books.google.com/books?id=eq9XvgAACAAJ&dq=harry+potter&hl=&as_pt=BOOKS&cd=2&source=gbs_api",
+    "infoLink": "http://books.google.com/books?id=eq9XvgAACAAJ&dq=harry+potter&hl=&as_pt=BOOKS&source=gbs_api",
+    "canonicalVolumeLink": "https://books.google.com/books/about/Fantastic_Beasts_and_Where_to_Find_Them.html?hl=&id=eq9XvgAACAAJ"
+  },
+  {
+    "title": "Harry Potter and the Cursed Child",
+    "authors": [
+      "J. K. Rowling",
+      "Jack Thorne",
+      "John Tiffany"
+    ],
+    "publisher": "Sphere",
+    "publishedDate": "2017-07-25",
+    "description": "The official playscript of the original West End production of Harry Potter and the Cursed Child. It was always difficult being Harry Potter and it isn't much easier now that he is an overworked employee of the Ministry of Magic, a husband, and father of three school-age children. While Harry grapples with a past that refuses to stay where it belongs, his youngest son Albus must struggle with the weight of a family legacy he never wanted. As past and present fuse ominously, both father and son learn the uncomfortable truth: sometimes, darkness comes from unexpected places. The playscript for Harry Potter and the Cursed Child was originally released as a 'special rehearsal edition' alongside the opening of Jack Thorne's play in London's West End in summer 2016. Based on an original story by J.K. Rowling, John Tiffany and Jack Thorne, the play opened to rapturous reviews from theatregoers and critics alike, while the official playscript became an immediate global bestseller. This revised paperback edition updates the 'special rehearsal edition' with the conclusive and final dialogue from the play, which has subtly changed since its rehearsals, as well as a conversation piece between director John Tiffany and writer Jack Thorne, who share stories and insights about reading playscripts. This edition also includes useful background information including the Potter family tree and a timeline of events from the wizarding world prior to the beginning of Harry Potter and the Cursed Child.",
+    "industryIdentifiers": [
+      {
+        "type": "ISBN_10",
+        "identifier": "0751565369"
+      },
+      {
+        "type": "ISBN_13",
+        "identifier": "9780751565362"
+      }
+    ],
+    "readingModes": {
+      "text": false,
+      "image": false
+    },
+    "pageCount": 352,
+    "printType": "BOOK",
+    "categories": [
+      "Fiction"
+    ],
+    "averageRating": 3,
+    "ratingsCount": 2,
+    "maturityRating": "NOT_MATURE",
+    "allowAnonLogging": false,
+    "contentVersion": "preview-1.0.0",
+    "panelizationSummary": {
+      "containsEpubBubbles": false,
+      "containsImageBubbles": false
+    },
+    "imageLinks": {
+      "smallThumbnail": "http://books.google.com/books/content?id=kLAoswEACAAJ&printsec=frontcover&img=1&zoom=5&source=gbs_api",
+      "thumbnail": "http://books.google.com/books/content?id=kLAoswEACAAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api"
+    },
+    "language": "en",
+    "previewLink": "http://books.google.com/books?id=kLAoswEACAAJ&dq=harry+potter&hl=&as_pt=BOOKS&cd=3&source=gbs_api",
+    "infoLink": "http://books.google.com/books?id=kLAoswEACAAJ&dq=harry+potter&hl=&as_pt=BOOKS&source=gbs_api",
+    "canonicalVolumeLink": "https://books.google.com/books/about/Harry_Potter_and_the_Cursed_Child.html?hl=&id=kLAoswEACAAJ"
+  },
+  {
+    "title": "Playing Harry Potter",
+    "subtitle": "Essays and Interviews on Fandom and Performance",
+    "authors": [
+      "Lisa S. Brenner"
+    ],
+    "publisher": "McFarland",
+    "publishedDate": "2015-06-11",
+    "description": "Through classroom activities, wizard rock concerts, and organizations like the Harry Potter Alliance, Harry Potter fans are using creativity to positively impact the world. This collection of essays and interviews examines how playful fandom--from fanfiction to Muggle quidditch, cosplay, role-playing games, and even Harry Potter burlesque--not only reimagines the canon but also challenges consumerism, questions notions of identity, and fosters participatory culture. The contributors explore issues applicable to fan studies and performance studies at large, such as the role of performance, the nature of community, and questions of representation and ownership in the digital age. Presented in three parts, the essays discuss discrepancies between sanctioned versions of Harry Potter and fan creations, the reenactment and reinterpretation of the original narrative in fan performance, and collaborative and participatory performances that break down the boundaries between actors and audiences.",
+    "industryIdentifiers": [
+      {
+        "type": "ISBN_13",
+        "identifier": "9780786496570"
+      },
+      {
+        "type": "ISBN_10",
+        "identifier": "0786496576"
+      }
+    ],
+    "readingModes": {
+      "text": false,
+      "image": true
+    },
+    "pageCount": 238,
+    "printType": "BOOK",
+    "categories": [
+      "Literary Criticism"
+    ],
+    "averageRating": 5,
+    "ratingsCount": 1,
+    "maturityRating": "NOT_MATURE",
+    "allowAnonLogging": false,
+    "contentVersion": "preview-1.0.0",
+    "panelizationSummary": {
+      "containsEpubBubbles": false,
+      "containsImageBubbles": false
+    },
+    "imageLinks": {
+      "smallThumbnail": "http://books.google.com/books/content?id=LbnwCQAAQBAJ&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
+      "thumbnail": "http://books.google.com/books/content?id=LbnwCQAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
+    },
+    "language": "en",
+    "previewLink": "http://books.google.com/books?id=LbnwCQAAQBAJ&printsec=frontcover&dq=harry+potter&hl=&as_pt=BOOKS&cd=4&source=gbs_api",
+    "infoLink": "http://books.google.com/books?id=LbnwCQAAQBAJ&dq=harry+potter&hl=&as_pt=BOOKS&source=gbs_api",
+    "canonicalVolumeLink": "https://books.google.com/books/about/Playing_Harry_Potter.html?hl=&id=LbnwCQAAQBAJ"
   }
 ]

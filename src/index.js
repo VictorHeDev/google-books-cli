@@ -5,6 +5,12 @@ const { retrieveReadingList, resetReadingList } = require('./reading_list');
 const figlet = require('figlet');
 const chalk = require('chalk');
 
+// import inquirer from 'inquirer';
+// import { clearConsole } from './utils';
+// import { searchBook } from './books';
+// import { retrieveReadingList, resetReadingList } from './reading_list';
+// import figlet from 'figlet';
+// import chalk from 'chalk';
 
 const mainMenu = [
   {

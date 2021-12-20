@@ -54,6 +54,7 @@ Documentation
 - [Todo List CLI](https://www.digitalocean.com/community/tutorials/how-to-build-command-line-applications-with-node-js)
 - [Joke & Quote CLI](https://www.section.io/engineering-education/create-a-nodejs-cli/)
 - [Figlet fonts](https://delightlylinux.wordpress.com/2014/05/30/produce-fancy-text-with-figlet/#:~:text=Custom%20Fonts,downloaded%20from%20the%20ftp%20site.)
+- [More weather](https://codeburst.io/build-a-command-line-interface-cli-application-with-node-js-59becec90e28)
 
 ### Notable issues or annoyances
 
@@ -61,8 +62,9 @@ Documentation
 - Choosing a CLI tool -- chose between prompt.js, inquirer.js, commander.js
   - Ultimately chose inquirer because I thought it would be the most fun to learn and has the best UI. I like how you can have many different options of inputs to choose from. Namely, I knew that I wanted a main menu interface, a way to select one or multiple books, and even though it wasn't totally necessary I wanted an option to reset the reading list.
 - Edge cases and bugs such as parsing what is actually returned from the Google Books API
--
+- Had to downgrade the chalk.js dependency version so I can use the require syntax in the top of the file
 
 ### TODO
+
 - Use chalk.js to create thematic logs
   - Red for errors

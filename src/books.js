@@ -71,7 +71,6 @@ const callGoogleBooksApi = async (query) => {
       )
     );
     return [];
-    // console.log(searchResultsArr.forEach((book) => console.log('\n' + book.title)));
   } catch (err) {
     console.log(errorColor('An error has occurred: '), err);
     return [];

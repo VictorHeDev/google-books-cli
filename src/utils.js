@@ -64,6 +64,19 @@ const formatReadingList = (idx, title, authors, publisher) => {
 */
 // TODO: should I break this up into a hash?
 // TODO: should I make a different messages files?
+export const colors = {
+  welcomeColor: chalk.bold.yellowBright,
+  menuColor: chalk.bold.whiteBright,
+  successColor: chalk.bold.keyword('lime'),
+  errorColor: chalk.bold.red,
+  warningColor: chalk.redBright,
+  readingListColor: chalk.whiteBright,
+  titleColor: chalk.bold.magentaBright,
+  authorsColor: chalk.cyanBright,
+  publisherColor: chalk.blueBright,
+  exitColor: chalk.gray,
+};
+
 const welcomeColor = chalk.bold.yellowBright;
 const menuColor = chalk.bold.whiteBright;
 const successColor = chalk.bold.keyword('lime');
@@ -78,6 +91,7 @@ const exitColor = chalk.gray;
 module.exports = {
   clearConsole,
   checkForValidTitle,
+  colors,
   welcomeColor,
   menuColor,
   successColor,

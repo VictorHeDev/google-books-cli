@@ -5,6 +5,7 @@ const {
   warningColor,
   errorColor,
   exitColor,
+  colors,
 } = require('./utils');
 const { queryForBooks } = require('./books');
 const { retrieveReadingList, resetReadingList } = require('./reading_list');
@@ -25,7 +26,9 @@ const mainMenu = [
   {
     type: 'list',
     name: 'action',
-    message: welcomeColor(`Hello there, what would you like to do today?\n`),
+    message: colors.welcomeColor(
+      `Hello there, what would you like to do today?\n`
+    ),
     choices: [
       { name: 'Search for a book by title', value: 'search' },
       { name: 'Check out my reading list', value: 'list' },
@@ -69,10 +72,6 @@ const mainLoop = async () => {
       { padding: 1, margin: 1, borderStyle: 'double', borderColor: 'white' }
     )
   );
-
-  // console.clear();
-  // console.log('WELCOME TO THE GOOGLE-BOOKS-CLI!\n');
-  // console.log('Please follow the appropriate prompts below ...');
 
   try {
     let userWantsToExit = false;

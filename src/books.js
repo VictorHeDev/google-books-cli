@@ -3,7 +3,6 @@ const inquirer = require('inquirer');
 const {
   clearConsole,
   checkForValidTitle,
-  menuColor,
   colors,
   formatSearchResults,
 } = require('./utils');
@@ -21,7 +20,7 @@ const queryForBooks = async (query) => {
     const addToList = await inquirer.prompt({
       type: 'checkbox',
       name: 'add',
-      message: menuColor(
+      message: colors.menuColor(
         `Do you want to add any of these to your reading list?`
       ),
       async choices() {

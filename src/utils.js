@@ -31,27 +31,27 @@ const checkForValidTitle = (title) => {
 // ! not super DRY code, but I felt the need to separate these two formatting approaches
 const formatSearchResults = (title, authors, publisher) => {
   let formattedBook = ``;
-  let formattedTitle = titleColor(title);
+  let formattedTitle = colors.titleColor(title);
   let formattedAuthors = authors.length
-    ? authorsColor(authors)
-    : authorsColor('N/A');
+    ? colors.authorsColor(authors)
+    : colors.authorsColor('N/A');
   let formattedPublisher = publisher
-    ? publisherColor(publisher)
-    : publisherColor('N/A');
+    ? colors.publisherColor(publisher)
+    : colors.publisherColor('N/A');
   formattedBook = `${formattedTitle} by ${formattedAuthors} publisher ${formattedPublisher}`;
   return formattedBook;
 };
 
 const formatReadingList = (idx, title, authors, publisher) => {
   let formattedBook = ``;
-  let formattedIdx = menuColor(idx);
-  let formattedTitle = titleColor(title);
+  let formattedIdx = colors.menuColor(idx);
+  let formattedTitle = colors.titleColor(title);
   let formattedAuthors = authors.length
-    ? authorsColor(authors)
-    : authorsColor('N/A');
+    ? colors.authorsColor(authors)
+    : colors.authorsColor('N/A');
   let formattedPublisher = publisher
-    ? publisherColor(publisher)
-    : publisherColor('N/A');
+    ? colors.publisherColor(publisher)
+    : colors.publisherColor('N/A');
   formattedBook = `${formattedTitle} by ${formattedAuthors} publisher ${formattedPublisher}`;
   return `${formattedIdx}. ${formattedTitle} \n\tby ${formattedAuthors} \n\tpublished by ${formattedPublisher}`;
 };
@@ -77,31 +77,10 @@ export const colors = {
   exitColor: chalk.gray,
 };
 
-const welcomeColor = chalk.bold.yellowBright;
-const menuColor = chalk.bold.whiteBright;
-const successColor = chalk.bold.keyword('lime');
-const errorColor = chalk.bold.red;
-const warningColor = chalk.redBright;
-const readingListColor = chalk.whiteBright;
-const titleColor = chalk.bold.magentaBright;
-const authorsColor = chalk.cyanBright;
-const publisherColor = chalk.blueBright;
-const exitColor = chalk.gray;
-
 module.exports = {
   clearConsole,
   checkForValidTitle,
   colors,
-  welcomeColor,
-  menuColor,
-  successColor,
-  errorColor,
-  warningColor,
-  readingListColor,
-  titleColor,
-  authorsColor,
-  publisherColor,
-  exitColor,
   formatSearchResults,
   formatReadingList,
 };

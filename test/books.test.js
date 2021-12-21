@@ -26,16 +26,16 @@ describe('callGoogleBooksApi', () => {
   const searchResults = [
     {
       volumeInfo: {
-        authors: ['M. H. Clark'],
-        title: 'When You Love a Cat',
-        publisher: 'Compendium Publishing & Communications',
+        authors: ['J.K. Rowling'],
+        title: `Harry Potter and the Sorcerer's Stone`,
+        publisher: 'Bloomsbury',
       },
     },
     {
       volumeInfo: {
-        authors: ['Pam Johnson-Bennett'],
-        title: 'Think Like a Cat',
-        publisher: 'Penguin',
+        authors: ['J.K. Rowling'],
+        title: 'Harry Potter and the Chamber of Secrets',
+        publisher: 'Bloomsbury',
       },
     },
     {

@@ -48,7 +48,38 @@ const mainMenu = [
   },
 ];
 
-const mainLoop = async () => {
+const runMainLoop = async () => {
+  let userWantsToExit = false;
+  while (!userWantsToExit) {
+    const mainMenuAnswer = await inquirer.prompt(mainMenu);
+    const { action, query, confirmClear } = mainMenuAnswer;
+
+    switch (action) {
+      case 'search':
+        await queryForBooks(query);
+        break;
+      case 'list':
+        retrieveReadingList();
+        break;
+      case 'clear':
+        if (confirmClear) {
+          resetReadingList();
+        }
+        break;
+      case 'exit':
+        console.log(
+          colors.exitColor('\nThanks for checking in. \nSee you again soon!')
+        );
+        userWantsToExit = true;
+        break;
+      default:
+        console.log(colors.warningColor('Please choose a valid choice!'));
+        break;
+    }
+  }
+};
+
+const kickoffMainLoop = () => {
   clearConsole();
   // console.clear();
 
@@ -68,37 +99,10 @@ const mainLoop = async () => {
   );
 
   try {
-    let userWantsToExit = false;
-    while (!userWantsToExit) {
-      const mainMenuAnswer = await inquirer.prompt(mainMenu);
-      const { action, query, confirmClear } = mainMenuAnswer;
-
-      switch (action) {
-        case 'search':
-          await queryForBooks(query);
-          break;
-        case 'list':
-          retrieveReadingList();
-          break;
-        case 'clear':
-          if (confirmClear) {
-            resetReadingList();
-          }
-          break;
-        case 'exit':
-          console.log(
-            colors.exitColor('\nThanks for checking in. \nSee you again soon!')
-          );
-          userWantsToExit = true;
-          break;
-        default:
-          console.log(colors.warningColor('Please choose a valid choice!'));
-          break;
-      }
-    }
+    runMainLoop();
   } catch (err) {
     console.log(colors.errorColor(`The error is: ${err}`));
   }
 };
 
-module.exports = { mainLoop };
+module.exports = { kickoffMainLoop };

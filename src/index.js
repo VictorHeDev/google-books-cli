@@ -1,16 +1,8 @@
 const inquirer = require('inquirer');
-const {
-  clearConsole,
-  welcomeColor,
-  warningColor,
-  errorColor,
-  exitColor,
-  colors,
-} = require('./utils');
+const { clearConsole, colors } = require('./utils');
 const { queryForBooks } = require('./books');
 const { retrieveReadingList, resetReadingList } = require('./reading_list');
 const figlet = require('figlet');
-const chalk = require('chalk');
 const boxen = require('boxen');
 
 // import inquirer from 'inquirer';
@@ -39,7 +31,7 @@ const mainMenu = [
   {
     type: 'input',
     name: 'query',
-    message: welcomeColor('What title would you like to search for?'),
+    message: colors.welcomeColor('What title would you like to search for?'),
     when(answer) {
       return answer.action === 'search';
     },
@@ -47,7 +39,9 @@ const mainMenu = [
   {
     type: 'confirm',
     name: 'confirmClear',
-    message: warningColor('Are you sure you want to clear your reading list?'),
+    message: colors.warningColor(
+      'Are you sure you want to clear your reading list?'
+    ),
     when(answer) {
       return answer.action === 'clear';
     },
@@ -60,7 +54,7 @@ const mainLoop = async () => {
 
   console.log(
     boxen(
-      welcomeColor(
+      colors.welcomeColor(
         figlet.textSync(`Welcome to Wood's Library`, {
           font: 'small slant',
           horizontalLayout: 'default',
@@ -93,17 +87,17 @@ const mainLoop = async () => {
           break;
         case 'exit':
           console.log(
-            exitColor('\nThanks for checking in. \nSee you again soon!')
+            colors.exitColor('\nThanks for checking in. \nSee you again soon!')
           );
           userWantsToExit = true;
           break;
         default:
-          console.log(warningColor('Please choose a valid choice!'));
+          console.log(colors.warningColor('Please choose a valid choice!'));
           break;
       }
     }
   } catch (err) {
-    console.log(errorColor(`The error is: ${err}`));
+    console.log(colors.errorColor(`The error is: ${err}`));
   }
 };
 

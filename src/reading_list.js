@@ -1,12 +1,5 @@
 const { existsSync, readFileSync, writeFileSync } = require('fs');
-const {
-  formatReadingList,
-  clearConsole,
-  welcomeColor,
-  warningColor,
-  successColor,
-  errorColor,
-} = require('./utils');
+const { formatReadingList, clearConsole, colors } = require('./utils');
 const boxen = require('boxen');
 const figlet = require('figlet');
 
@@ -41,7 +34,7 @@ const retrieveReadingList = () => {
   clearConsole();
   console.log(
     boxen(
-      welcomeColor(
+      colors.welcomeColor(
         figlet.textSync(`Reading List`, {
           font: 'small slant',
           horizontalLayout: 'default',
@@ -53,6 +46,7 @@ const retrieveReadingList = () => {
       { padding: 1, margin: 1, borderStyle: 'double', borderColor: 'white' }
     )
   );
+
   const readingListJSON = retrieveReadingListJSON(fileSrc);
   if (readingListJSON.length) {
     readingListJSON.forEach((book, idx) => {
@@ -61,7 +55,7 @@ const retrieveReadingList = () => {
     });
   } else {
     console.log(
-      warningColor(
+      colors.warningColor(
         `\nIt seems like your reading list is empty.\nTry adding some new books!\n`
       )
     );
@@ -72,11 +66,13 @@ const resetReadingList = () => {
   if (existsSync(fileSrc)) {
     writeFileSync(fileSrc, '');
     console.log(
-      successColor('\nBeep boop, your reading list has been reset\n')
+      colors.successColor(
+        '\n🤖 Beep boop 🤖, your reading list has been reset\n'
+      )
     );
   } else {
     console.log(
-      errorColor(
+      colors.errorColor(
         `\nWe can't seem to find this file.\nPlease create a file named 'reading_list.json' in the root directory\n`
       )
     );

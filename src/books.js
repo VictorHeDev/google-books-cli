@@ -4,11 +4,7 @@ const {
   clearConsole,
   checkForValidTitle,
   menuColor,
-  warningColor,
-  errorColor,
-  titleColor,
-  authorsColor,
-  publisherColor,
+  colors,
   formatSearchResults,
 } = require('./utils');
 require('dotenv').config();
@@ -36,12 +32,14 @@ const queryForBooks = async (query) => {
     if (addToList.add) {
       addBooksToReadingList(searchResultsArr, addToList.add);
     } else {
-      console.log(menuColor(`\nYou chose to not add any books this time.\n`));
+      console.log(
+        colors.menuColor(`\nYou chose to not add any books this time.\n`)
+      );
     }
   } else {
     console.log(
-      errorColor(
-        warningColor`\nPlease search with AlphaNumeric and spaces.\nIt looks like your search did not yield any results!\n`
+      colors.errorColor(
+        `\nPlease search with AlphaNumeric and spaces.\nIt looks like your search did not yield any results!\n`
       )
     );
   }
@@ -66,13 +64,13 @@ const callGoogleBooksApi = async (query) => {
       return searchResultsArr;
     }
     console.log(
-      warningColor(
+      colors.warningColor(
         `\nSorry, your search results did not have any matches. \nWould you like to try again?\n`
       )
     );
     return [];
   } catch (err) {
-    console.log(errorColor('An error has occurred: '), err);
+    console.log(colors.errorColor('An error has occurred: '), err);
     return [];
   }
 };

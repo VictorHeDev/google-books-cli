@@ -13,7 +13,7 @@ const BASE_URL = 'https://www.googleapis.com/books/v1/volumes';
 
 const queryForBooks = async (query) => {
   // clearConsole();
-  // console.clear();
+  console.clear();
   if (query && checkForValidTitle(query)) {
     const searchResultsArr = await callGoogleBooksApi(query);
 
@@ -58,7 +58,6 @@ const callGoogleBooksApi = async (query) => {
 
     const responseArr = res.data.items;
     if (responseArr) {
-      // return the book obj with title, authors, publisher
       const searchResultsArr = responseArr.map((book) => book.volumeInfo);
       return searchResultsArr;
     }

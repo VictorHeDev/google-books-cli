@@ -87,7 +87,7 @@ const kickoffMainLoop = () => {
     boxen(
       colors.welcomeColor(
         figlet.textSync(`Welcome to Wood's Library`, {
-          font: 'small slant',
+          font: 'Small Slant',
           horizontalLayout: 'default',
           verticalLayout: 'default',
           width: 80,

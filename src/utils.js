@@ -1,7 +1,7 @@
 const READLINE = require('readline');
 const chalk = require('chalk');
 
-// can also use console.clear()
+// can also use console.clear() but this can run differently on different machines!
 const clearConsole = () => {
   READLINE.cursorTo(process.stdout, 0, 0);
   READLINE.clearLine(process.stdout, 0);
@@ -62,7 +62,6 @@ const formatReadingList = (idx, title, authors, publisher) => {
   background colors are preceded with bg
   other modifiers: bold, dim, italic, underline, strikethrough
 */
-// TODO: should I break this up into a hash?
 // TODO: should I make a different messages files?
 export const colors = {
   welcomeColor: chalk.bold.yellowBright,

@@ -36,7 +36,7 @@ const retrieveReadingList = () => {
     boxen(
       colors.welcomeColor(
         figlet.textSync(`Reading List`, {
-          font: 'small slant',
+          font: 'Small Slant',
           horizontalLayout: 'default',
           verticalLayout: 'default',
           width: 80,

@@ -96,8 +96,9 @@ These instructions assume that you have already downloaded Git and Node. These a
   - [x] Title by Author(s) published by Publisher format
     - [x] If Author(s) or Publisher is undefined, return an N/A
 - Address code review feedback
-- [ ] Edit the checkForValidTitle function to accept certain punctuation characters like: ! ? - : . ,
-- [ ] Small bug related to entering a search term where one or more of the returned books do not have any listed authors - try using 'foo'
+- [x] Edit the checkForValidTitle function to accept certain punctuation characters like: ! ? - : . ,
+- [x] Small bug related to entering a search term where one or more of the returned books do not have any listed authors - try using 'foo'
+  - [.] Fixed this small bug -- I initially thought that if there's no author then it would send me an empty array. If there's no author then it would actually send back `undefined` so I was checking the length of `undefined` which does not exist
 - [ ] If entered a string of random characters which returns no results, an error message is shown but the prompt to select books from a list is still there. Strange user experience behavior
 - [ ] Using 'nom test' fails to run the testing suite. See if I can get past this issue.
   - [ ] I don't see a problem on my end, but I will see if I can get some others to clone the repo and test this on their end

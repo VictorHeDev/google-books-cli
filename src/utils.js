@@ -35,7 +35,9 @@ const checkForValidTitle = (title) => {
 const formatSearchResults = (title, authors, publisher) => {
   let formattedBook = ``;
   let formattedTitle = colors.titleColor(title);
-  let formattedAuthors = authors.length
+  // debugger;
+  console.log(authors);
+  let formattedAuthors = authors
     ? colors.authorsColor(authors)
     : colors.authorsColor('N/A');
   let formattedPublisher = publisher
@@ -49,7 +51,7 @@ const formatReadingList = (idx, title, authors, publisher) => {
   let formattedBook = ``;
   let formattedIdx = colors.menuColor(idx);
   let formattedTitle = colors.titleColor(title);
-  let formattedAuthors = authors.length
+  let formattedAuthors = authors
     ? colors.authorsColor(authors)
     : colors.authorsColor('N/A');
   let formattedPublisher = publisher

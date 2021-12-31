@@ -1,6 +1,3 @@
-// import axios from 'axios';
-// import { queryForBooks, callGoogleBooksApi, displaySearchResults } from './books';
-
 const axios = require('axios');
 const {
   queryForBooks,

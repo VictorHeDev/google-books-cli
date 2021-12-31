@@ -80,6 +80,7 @@ const resetReadingList = () => {
 };
 
 module.exports = {
+  retrieveReadingListJSON,
   addBooksToReadingList,
   retrieveReadingList,
   resetReadingList,

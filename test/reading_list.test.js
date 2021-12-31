@@ -13,9 +13,11 @@ describe('Initial test to see if functions exported correctly', () => {
   test('addBooksToReadingList function exists', () => {
     expect(typeof addBooksToReadingList).toEqual('function');
   });
+
   test('retrieveReadingList function exists', () => {
     expect(typeof retrieveReadingList).toEqual('function');
   });
+  
   test('resetReadingList function exists', () => {
     expect(typeof resetReadingList).toEqual('function');
   });

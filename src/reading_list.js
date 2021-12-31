@@ -4,7 +4,6 @@ const boxen = require('boxen');
 const figlet = require('figlet');
 
 const fileSrc = `${process.cwd()}/reading_list.json`;
-// console.log(fileSrc);
 
 const retrieveReadingListJSON = (file) => {
   if (existsSync(file)) {
@@ -29,7 +28,6 @@ const addBooksToReadingList = (searchResults, chosenBooksTitles) => {
   writeFileSync(fileSrc, encodedData);
 };
 
-// !: say empty message if there are no books in reading list
 const retrieveReadingList = () => {
   clearConsole();
   console.log(

@@ -38,7 +38,7 @@ These instructions assume that you have already downloaded Git and Node. These a
       1. Later learned that I do not need an API key in order to make GET requests
    3. Create a welcome message
    4. I can use the Axios library in order to abstract away having to parse the JSON data that is being sent back
-      1. Validate and format request and response 
+      1. Validate and format request and response
    5. I specifically need to save the information about the book's title, author(s), and publisher
 2. A user should be able to select a book from the 5 displayed to save to a "Reading List"
    1. What ways can I save this?
@@ -108,3 +108,4 @@ These instructions assume that you have already downloaded Git and Node. These a
   - [ ] I don't see a problem on my end, but I will see if I can get some others to clone the repo and test this on their end
   - [ ] Add steps to resolve this issue in README
 - [ ] Delete commented out code and overall cleanup of code
+

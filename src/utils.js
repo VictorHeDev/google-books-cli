@@ -74,8 +74,6 @@ const formatReadingList = (idx, title, authors, publisher) => {
   return `${formattedIdx}. ${formattedTitle} \n\tby ${formattedAuthors} \n\tpublished by ${formattedPublisher}`;
 };
 
-
-
 module.exports = {
   colors,
   clearConsole,

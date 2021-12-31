@@ -1,4 +1,5 @@
 const { runMainLoop, kickoffMainLoop } = require('../src/index');
+const inquirer = require('inquirer');
 
 describe('Initial test to see if functions exported correctly', () => {
   test('runMainLoop function exists', () => {

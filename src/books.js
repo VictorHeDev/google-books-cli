@@ -1,9 +1,9 @@
 const axios = require('axios');
 const inquirer = require('inquirer');
 const {
+  colors,
   clearConsole,
   checkForValidTitle,
-  colors,
   formatSearchResults,
 } = require('./utils');
 require('dotenv').config();

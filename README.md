@@ -94,3 +94,9 @@ These instructions assume that you have already downloaded Git and Node. These a
   - [x] If reading list is blank when checked, let the user know to add in more books
   - [x] Title by Author(s) published by Publisher format
     - [x] If Author(s) or Publisher is undefined, return an N/A
+- Address code review feedback
+- [ ] Delete commented out code and overall cleanup of code
+- [ ] Edit the checkForValidTitle function to accept certain punctuation characters like: ! ? - : . ,
+- [ ] Small bug related to entering a search term where one or more of the returned books do not have any listed authors - try using 'foo'
+- [ ] If entered a string of random characters which returns no results, an error message is shown but the prompt to select books from a list is still there. Strange user experience behavior
+- [ ] 

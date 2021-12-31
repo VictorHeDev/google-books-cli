@@ -63,7 +63,7 @@ const formatReadingList = (idx, title, authors, publisher) => {
   other modifiers: bold, dim, italic, underline, strikethrough
 */
 // TODO: should I make a different messages files?
-export const colors = {
+const colors = {
   welcomeColor: chalk.bold.yellowBright,
   menuColor: chalk.bold.whiteBright,
   successColor: chalk.bold.keyword('lime'),

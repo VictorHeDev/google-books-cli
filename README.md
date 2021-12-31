@@ -26,17 +26,19 @@ These instructions assume that you have already downloaded Git and Node. These a
 `Chalk`: used to make the CLI colorful, pretty, and more pleasant to use
 `Dotenv`: used to hide API key (which later I found out I didn't need to make GET requests)
 `esm`: used to write ES6 code
-`Figlet`: used with Boxen to create pretty ASCI art text
+`Figlet`: used with Boxen to create pretty ASCII art text
 `Inquirer`: (very difficult to spell) used to interact with the CLI and display multiple choice responses instead of having to type directly into the interface
 `Jest`: first time trying this JavaScript testing suite
 
 ### ⛹🏻‍♂️ MVPs ⛹🏻‍♂️
 
 1. Type in query and it should display a list of 5 books matching that query
-   1. First create the initial file structure and research which dependencies I might want to add:
+   1. First create the initial file structure and research which dependencies I might want to add
    2. Make an API key in order to use the Google Books API and hide it away into a .env file that will not be pushed to GitHub
+      1. Later learned that I do not need an API key in order to make GET requests
    3. Create a welcome message
    4. I can use the Axios library in order to abstract away having to parse the JSON data that is being sent back
+      1. Validate and format request and response 
    5. I specifically need to save the information about the book's title, author(s), and publisher
 2. A user should be able to select a book from the 5 displayed to save to a "Reading List"
    1. What ways can I save this?

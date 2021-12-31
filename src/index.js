@@ -5,15 +5,6 @@ const { retrieveReadingList, resetReadingList } = require('./reading_list');
 const figlet = require('figlet');
 const boxen = require('boxen');
 
-// import inquirer from 'inquirer';
-// import { clearConsole, welcomeColor } from './utils';
-// import { queryForBooks } from './books';
-// import { retrieveReadingList, resetReadingList } from './reading_list';
-// import figlet from 'figlet';
-// import chalk from 'chalk';
-// import boxen from 'boxen';
-
-// main menu options highlight gets overridden by chalk. Left defaults.
 const mainMenu = [
   {
     type: 'list',

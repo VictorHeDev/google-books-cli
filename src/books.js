@@ -12,12 +12,12 @@ const { addBooksToReadingList } = require('./reading_list');
 const BASE_URL = 'https://www.googleapis.com/books/v1/volumes';
 
 const queryForBooks = async (query) => {
-  // clearConsole();
-  console.clear();
+  clearConsole();
+
   if (query && checkForValidTitle(query)) {
     const searchResultsArr = await callGoogleBooksApi(query);
 
-    if (!searchResultsArr.length) return; // early return 
+    if (!searchResultsArr.length) return; // early return
     const addToList = await inquirer.prompt({
       type: 'checkbox',
       name: 'add',
@@ -74,7 +74,6 @@ const callGoogleBooksApi = async (query) => {
   }
 };
 
-// change name to displaySearchResults
 const displaySearchResults = (results) => {
   const booksObjArr = results.map((book) => {
     const { title, authors, publisher } = book;

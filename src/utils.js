@@ -1,6 +1,25 @@
 const READLINE = require('readline');
 const chalk = require('chalk');
 
+/* COLORS
+  standard: black, red, green, yellow, blue, magenta, cyan, white, gray
+  bright: blackBright, redBright, greenBright, yellowBright, blueBright, magentaBright, cyanBright, whiteBright
+  background colors are preceded with bg
+  other modifiers: bold, dim, italic, underline, strikethrough
+*/
+const colors = {
+  welcomeColor: chalk.bold.yellowBright,
+  menuColor: chalk.bold.whiteBright,
+  successColor: chalk.bold.keyword('lime'),
+  errorColor: chalk.bold.red,
+  warningColor: chalk.redBright,
+  readingListColor: chalk.whiteBright,
+  titleColor: chalk.bold.magentaBright,
+  authorsColor: chalk.cyanBright,
+  publisherColor: chalk.blueBright,
+  exitColor: chalk.gray,
+};
+
 // can also use console.clear() but this can run differently on different machines!
 const clearConsole = () => {
   READLINE.cursorTo(process.stdout, 0, 0);
@@ -19,10 +38,6 @@ const checkForValidTitle = (title) => {
       !(code > 32 && code < 91) && // special chars & alphanum
       !(code > 96 && code < 123) && // lower alpha (a-z)
       !(code === 32) // code for spaceBar
-      // !(code > 47 && code < 58) && // numeric (0-9)
-      // !(code > 64 && code < 91) && // upper alpha (A-Z)
-      // !(code > 96 && code < 123) && // lower alpha (a-z)
-      // !(code === 32) // code for spaceBar
     ) {
       return false;
     }
@@ -31,7 +46,7 @@ const checkForValidTitle = (title) => {
 };
 
 // FORMATTING
-// ! not super DRY code, but I felt the need to separate these two formatting approaches
+// * not super DRY code, but I felt the need to separate these two formatting approaches
 const formatSearchResults = (title, authors, publisher) => {
   let formattedBook = ``;
   let formattedTitle = colors.titleColor(title);
@@ -59,30 +74,12 @@ const formatReadingList = (idx, title, authors, publisher) => {
   return `${formattedIdx}. ${formattedTitle} \n\tby ${formattedAuthors} \n\tpublished by ${formattedPublisher}`;
 };
 
-/* COLORS
-  standard: black, red, green, yellow, blue, magenta, cyan, white, gray
-  bright: blackBright, redBright, greenBright, yellowBright, blueBright, magentaBright, cyanBright, whiteBright
-  background colors are preceded with bg
-  other modifiers: bold, dim, italic, underline, strikethrough
-*/
-// TODO: should I make a different messages files?
-const colors = {
-  welcomeColor: chalk.bold.yellowBright,
-  menuColor: chalk.bold.whiteBright,
-  successColor: chalk.bold.keyword('lime'),
-  errorColor: chalk.bold.red,
-  warningColor: chalk.redBright,
-  readingListColor: chalk.whiteBright,
-  titleColor: chalk.bold.magentaBright,
-  authorsColor: chalk.cyanBright,
-  publisherColor: chalk.blueBright,
-  exitColor: chalk.gray,
-};
+
 
 module.exports = {
+  colors,
   clearConsole,
   checkForValidTitle,
-  colors,
   formatSearchResults,
   formatReadingList,
 };

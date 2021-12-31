@@ -74,10 +74,11 @@ These instructions assume that you have already downloaded Git and Node. These a
 - Choosing a CLI tool -- chose between prompt.js, inquirer.js, commander.js
   - Choosing between a flag interface or a prettier CLI with space and arrow keys
   - Ultimately chose inquirer because I thought it would be the most fun to learn and has the best UI. I like how you can have many different options of inputs to choose from. Namely, I knew that I wanted a main menu interface, a way to select one or multiple books, and even though it wasn't totally necessary I wanted an option to reset the reading list.
+  - When using inquirer arrow key prompt, the chalk would override selected color (main menu highlight gets overridden by chalk)
 - Edge cases and bugs such as parsing what is actually returned from the Google Books API
 - Had to downgrade the chalk.js dependency version so I can use the require syntax in the top of the file (see their GitHub repo for more info)
   - Ran into issues using esm and writing tests in jest. I like using the ES6 import/exports, but I also wanted to implement TDD in this project
-- Also had to downgrade the boxen version to use require and not import
+- Also had to downgrade the boxen version to use require and not import/export using ES6
 
 ### 📝 TODO & Notes 📝
 

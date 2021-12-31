@@ -17,6 +17,7 @@ const queryForBooks = async (query) => {
   if (query && checkForValidTitle(query)) {
     const searchResultsArr = await callGoogleBooksApi(query);
 
+    if (!searchResultsArr.length) return; // early return 
     const addToList = await inquirer.prompt({
       type: 'checkbox',
       name: 'add',

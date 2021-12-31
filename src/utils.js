@@ -35,8 +35,6 @@ const checkForValidTitle = (title) => {
 const formatSearchResults = (title, authors, publisher) => {
   let formattedBook = ``;
   let formattedTitle = colors.titleColor(title);
-  // debugger;
-  console.log(authors);
   let formattedAuthors = authors
     ? colors.authorsColor(authors)
     : colors.authorsColor('N/A');

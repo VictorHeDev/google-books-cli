@@ -16,10 +16,13 @@ const checkForValidTitle = (title) => {
     code = title.charCodeAt(i);
     // a lot of checks, but should still be faster than RegEx
     if (
-      !(code > 47 && code < 58) && // numeric (0-9)
-      !(code > 64 && code < 91) && // upper alpha (A-Z)
+      !(code > 32 && code < 91) && // special chars & alphanum
       !(code > 96 && code < 123) && // lower alpha (a-z)
       !(code === 32) // code for spaceBar
+      // !(code > 47 && code < 58) && // numeric (0-9)
+      // !(code > 64 && code < 91) && // upper alpha (A-Z)
+      // !(code > 96 && code < 123) && // lower alpha (a-z)
+      // !(code === 32) // code for spaceBar
     ) {
       return false;
     }

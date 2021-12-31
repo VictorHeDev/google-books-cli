@@ -17,6 +17,7 @@ These instructions assume that you have already downloaded Git and Node. These a
 3. Install the dependencies by running `npm install` or `npm i`
 4. Run the application by typing `node .` when you are located in the root directory
    1. If you would like to use it anywhere, you can globally install it: `sudo npm install -g .` and then run `books`
+   2. If you would like to run the testing suite, run `npm test`
 
 ### 💾 Dependencies Used 💾
 
@@ -95,8 +96,10 @@ These instructions assume that you have already downloaded Git and Node. These a
   - [x] Title by Author(s) published by Publisher format
     - [x] If Author(s) or Publisher is undefined, return an N/A
 - Address code review feedback
-- [ ] Delete commented out code and overall cleanup of code
 - [ ] Edit the checkForValidTitle function to accept certain punctuation characters like: ! ? - : . ,
 - [ ] Small bug related to entering a search term where one or more of the returned books do not have any listed authors - try using 'foo'
 - [ ] If entered a string of random characters which returns no results, an error message is shown but the prompt to select books from a list is still there. Strange user experience behavior
-- [ ] 
+- [ ] Using 'nom test' fails to run the testing suite. See if I can get past this issue.
+  - [ ] I don't see a problem on my end, but I will see if I can get some others to clone the repo and test this on their end
+  - [ ] Add steps to resolve this issue in README
+- [ ] Delete commented out code and overall cleanup of code

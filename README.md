@@ -56,7 +56,7 @@ These instructions assume that you have already downloaded Git and Node. These a
 - [Jest](https://jestjs.io/docs/getting-started)
 - [Google Books Api](https://developers.google.com/books/docs/v1/getting_started)
 
-##### Additional
+##### 🌱 Additional 🌱
 
 - [Weather CLI](https://dev.to/aritik/build-a-weather-cli-tool-using-nodejs-inquirer-and-weatherapi-2f5n)
 - [Google Translate CLI](https://dev.to/rushankhan1/build-a-cli-with-node-js-4jbi)

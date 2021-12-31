@@ -72,7 +72,6 @@ const runMainLoop = async () => {
 
 const kickoffMainLoop = () => {
   clearConsole();
-  // console.clear();
 
   console.log(
     boxen(
@@ -96,4 +95,4 @@ const kickoffMainLoop = () => {
   }
 };
 
-module.exports = { kickoffMainLoop };
+module.exports = { kickoffMainLoop, runMainLoop };
